@@ -10,3 +10,15 @@ C:\Users\Abdullah\source\repos\CourseProject\EvimikurProject\Entity\obj\Debug\ne
 C:\Users\Abdullah\source\repos\CourseProject\EvimikurProject\Entity\obj\Debug\net7.0\refint\Entity.dll
 C:\Users\Abdullah\source\repos\CourseProject\EvimikurProject\Entity\obj\Debug\net7.0\Entity.pdb
 C:\Users\Abdullah\source\repos\CourseProject\EvimikurProject\Entity\obj\Debug\net7.0\ref\Entity.dll
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\bin\Debug\net7.0\Entity.deps.json
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\bin\Debug\net7.0\Entity.dll
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\bin\Debug\net7.0\Entity.pdb
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\Entity.csproj.AssemblyReference.cache
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\Entity.AssemblyInfoInputs.cache
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\Entity.AssemblyInfo.cs
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\Entity.csproj.CoreCompileInputs.cache
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\Entity.dll
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\refint\Entity.dll
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\Entity.pdb
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\ref\Entity.dll

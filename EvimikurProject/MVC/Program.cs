@@ -13,7 +13,16 @@ builder.Services.AddDbContext<Context>(options => options.
     UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 builder.Services.AddTransient(typeof(IRepository<>), typeof(BaseRepository<>));
+builder.Services.AddScoped<ICategoryService, CategoryService>();
+builder.Services.AddScoped<ICityService, CityService>();
+builder.Services.AddScoped<ICountryService, CountryService>();
+builder.Services.AddScoped<IDealerService, DealerService>();
+builder.Services.AddScoped<IDealerStocksService, DealerStocksService>();
+builder.Services.AddScoped<IDistrictService, DistrictService>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IOrderDetailsService, OrderDetailsService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IProductService, ProductService>();
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<Context>();
 
