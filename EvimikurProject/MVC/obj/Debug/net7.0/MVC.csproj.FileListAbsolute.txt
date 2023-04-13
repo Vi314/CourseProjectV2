@@ -353,3 +353,7 @@ C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\De
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\Debug\net7.0\System.CodeDom.dll

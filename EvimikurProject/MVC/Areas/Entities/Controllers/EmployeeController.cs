@@ -13,13 +13,21 @@ namespace MVC.Areas.Entities.Controllers
 	    {
 		    _repository = repository;
 	    }
-	    public IActionResult CreateEmployee(Employee employee)
+
+		public IActionResult CreateEmployee()
+		{
+			return View();
+		}
+		[HttpPost]
+		public IActionResult CreateEmployee(Employee employee)
 	    {
 			var result = _repository.CreateEmployee(employee);
 			ViewBag.CreateResult = result;
-		    return View();
+		    return RedirectToAction("Index");
 	    }
-	    public IActionResult GetEmployees()
+		
+	    [HttpGet]
+		public IActionResult Index()  
 	    {
 		    var employees = _repository.GetEmployees();
 		    return View(employees);

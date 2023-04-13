@@ -246,6 +246,9 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
+              "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\DataAccess\\DataAccess.csproj"
+              },
               "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Logic\\Logic.csproj": {
                 "projectPath": "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Logic\\Logic.csproj"
               }
@@ -262,6 +265,12 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[7.0.5, )"
