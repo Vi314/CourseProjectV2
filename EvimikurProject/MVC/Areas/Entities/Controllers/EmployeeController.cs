@@ -1,6 +1,9 @@
 ﻿using Entity.Entity;
 using Logic.Abstract_Service;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
+using MVC.Models;
+using MVC.Models.ViewModels;
 
 namespace MVC.Areas.Entities.Controllers
 {
@@ -8,10 +11,12 @@ namespace MVC.Areas.Entities.Controllers
 	public class EmployeeController : Controller
     {
 	    private readonly IEmployeeService _repository;
+	    private readonly IMapper _mapper;
 
-	    public EmployeeController(IEmployeeService repository)
+	    public EmployeeController(IEmployeeService repository,IMapper mapper)
 	    {
 		    _repository = repository;
+		    _mapper = mapper;
 	    }
 
 		public IActionResult CreateEmployee()
@@ -19,30 +24,50 @@ namespace MVC.Areas.Entities.Controllers
 			return View();
 		}
 		[HttpPost]
-		public IActionResult CreateEmployee(Employee employee)
-	    {
+		public IActionResult CreateEmployee(EmployeeDTO employeeDTO)
+		{
+			var employee = _mapper.EmployeeMapper(employeeDTO);
 			var result = _repository.CreateEmployee(employee);
-			ViewBag.CreateResult = result;
+			TempData["Result"] = result;
 		    return RedirectToAction("Index");
 	    }
 		
-	    [HttpGet]
 		public IActionResult Index()  
 	    {
 		    var employees = _repository.GetEmployees();
 		    return View(employees);
 	    }
-	    public IActionResult UpdateEmployee(Employee employee)
+		public IActionResult UpdateEmployee(int id)
+		{
+			EmployeeDTO employee = new EmployeeDTO();
+			foreach (var item in _repository.GetEmployees())
+			{
+				if (item.Id == id)
+				{
+					employee.FirstName = item.FirstName;
+					employee.LastName = item.LastName;
+					employee.Department = item.Department;
+					employee.EducationLevel = item.EducationLevel;
+					employee.Title = item.Title;
+					employee.FullAddress = item.FullAddress;
+					break;
+				}
+			}
+			return View(employee);
+		}
+		[HttpPost]
+	    public IActionResult UpdateEmployee(EmployeeDTO employeeDTO)
 	    {
-			var result = _repository.UpdateEmployee(employee);
-			ViewBag.UpdateResult = result;
-		    return View();
+		    var employee = _mapper.EmployeeMapper(employeeDTO);
+		    var result = _repository.UpdateEmployee(employee);
+			TempData["Result"] = result;
+		    return RedirectToAction("Index");
 	    }
 	    public IActionResult DeleteEmployee(int id)
 	    {
 			var result = _repository.DeleteEmployee(id);
-			ViewBag.DeleteResult = result;
-		    return View();
+			TempData["Result"] = result;
+		    return RedirectToAction("Index");
 	    }
 	}
 }

@@ -197,6 +197,16 @@
         "build": {
           "buildTransitive/net6.0/_._": {}
         }
+      },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
       }
     }
   },
@@ -510,10 +520,16 @@
         "microsoft.extensions.primitives.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Common >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 7.0.0"
     ]
   },
@@ -548,7 +564,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Common\\Common.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

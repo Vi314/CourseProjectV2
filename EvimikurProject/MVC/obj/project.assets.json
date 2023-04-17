@@ -3744,6 +3744,16 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Common.dll": {}
+        }
+      },
       "DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -3764,6 +3774,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "Common": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.0"
         },
         "compile": {
@@ -10816,6 +10827,11 @@
         "system.xml.xdocument.nuspec"
       ]
     },
+    "Common/1.0.0": {
+      "type": "project",
+      "path": "../Common/Common.csproj",
+      "msbuildProject": "../Common/Common.csproj"
+    },
     "DataAccess/1.0.0": {
       "type": "project",
       "path": "../DataAccess/DataAccess.csproj",
@@ -10834,6 +10850,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "Common >= 1.0.0",
       "DataAccess >= 1.0.0",
       "Logic >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.5",
@@ -10872,6 +10889,9 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
+            "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Common\\Common.csproj"
+            },
             "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\DataAccess\\DataAccess.csproj": {
               "projectPath": "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\DataAccess\\DataAccess.csproj"
             },

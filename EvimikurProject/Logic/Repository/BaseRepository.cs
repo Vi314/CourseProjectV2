@@ -12,11 +12,11 @@ namespace Logic.Repository
     public class BaseRepository<T> : IRepository<T> where T : BaseEntity
     {
         private readonly Context _context;
-        private DbSet<T> _entity;
+        private readonly DbSet<T> _entity;
 
         public BaseRepository(Context context) 
         {
-            this._context = context;
+            _context = context;
             _entity = context.Set<T>();
         }
 

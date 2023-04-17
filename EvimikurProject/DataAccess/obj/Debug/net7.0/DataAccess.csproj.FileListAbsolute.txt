@@ -32,3 +32,5 @@ C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\DataAccess
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\DataAccess\obj\Debug\net7.0\DataAccess.pdb
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\DataAccess\obj\Debug\net7.0\DataAccess.genruntimeconfig.cache
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\DataAccess\obj\Debug\net7.0\ref\DataAccess.dll
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\DataAccess\bin\Debug\net7.0\Common.dll
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\DataAccess\bin\Debug\net7.0\Common.pdb

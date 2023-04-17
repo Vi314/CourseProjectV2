@@ -357,3 +357,5 @@ C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\De
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\Debug\net7.0\Common.dll
+C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC\bin\Debug\net7.0\Common.pdb

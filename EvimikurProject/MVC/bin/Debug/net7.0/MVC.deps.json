@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "MVC/1.0.0": {
         "dependencies": {
+          "Common": "1.0.0",
           "DataAccess": "1.0.0",
           "Logic": "1.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.5",
@@ -2305,6 +2306,11 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
+      "Common/1.0.0": {
+        "runtime": {
+          "Common.dll": {}
+        }
+      },
       "DataAccess/1.0.0": {
         "dependencies": {
           "Entity": "1.0.0",
@@ -2318,6 +2324,7 @@
       },
       "Entity/1.0.0": {
         "dependencies": {
+          "Common": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.5"
         },
         "runtime": {
@@ -3635,6 +3642,11 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "DataAccess/1.0.0": {
       "type": "project",

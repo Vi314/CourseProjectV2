@@ -1,0 +1,34 @@
+﻿@using Entity.Entity
+@model MVC.Models.ViewModels.EmployeeDTO
+@{
+	Layout = "_Layout";
+}
+<div>
+	<form method="post">
+		<div class="input-group mb-3">
+			<span class="input-group-text">İsim</span>
+			<input type="text" class="form-control" name="FirstName" value="@Model.FirstName"/>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Soyisim</span>
+			<input type="text" class="form-control" name="LastName" value="@Model.LastName" />
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Departman</span>
+			<input type="text" class="form-control" name="Department" value="@Model.Department" />
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Unvan</span>
+			<input type="text" class="form-control" name="Title" value="@Model.Title"/>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Eğitim Seviyesi</span>
+			<input type="text" class="form-control" name="EducationLevel" value="@Model.EducationLevel" />
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Açık Adres</span>
+			<textarea type="text" class="form-control" name="FullAddress">@Model.FullAddress</textarea>
+		</div>
+		<button class="btn btn-outline-success" type="submit">Kaydet</button>
+	</form>
+</div>
