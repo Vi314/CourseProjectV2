@@ -2,6 +2,7 @@
 using Logic.Abstract_Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Microsoft.EntityFrameworkCore;
 using MVC.Models;
 using MVC.Models.ViewModels;
 
@@ -26,7 +27,7 @@ namespace MVC.Areas.Entities.Controllers
 		[HttpPost]
 		public IActionResult CreateEmployee(EmployeeDTO employeeDTO)
 		{
-			var employee = _mapper.EmployeeMapper(employeeDTO);
+			var employee = _mapper.ToEmployee(employeeDTO);
 			var result = _repository.CreateEmployee(employee);
 			TempData["Result"] = result;
 		    return RedirectToAction("Index");
@@ -35,7 +36,17 @@ namespace MVC.Areas.Entities.Controllers
 		public IActionResult Index()  
 	    {
 		    var employees = _repository.GetEmployees();
-		    return View(employees);
+		    List<EmployeeDTO> dtoEmployees = new List<EmployeeDTO>();
+
+		    foreach (var emp in employees)
+		    {
+			    if (emp.State != EntityState.Deleted)
+			    {
+					dtoEmployees.Add(_mapper.FromEmployee(emp));
+				}
+		    }
+
+		    return View(dtoEmployees);
 	    }
 		public IActionResult UpdateEmployee(int id)
 		{
@@ -44,12 +55,7 @@ namespace MVC.Areas.Entities.Controllers
 			{
 				if (item.Id == id)
 				{
-					employee.FirstName = item.FirstName;
-					employee.LastName = item.LastName;
-					employee.Department = item.Department;
-					employee.EducationLevel = item.EducationLevel;
-					employee.Title = item.Title;
-					employee.FullAddress = item.FullAddress;
+					employee = _mapper.FromEmployee(item);
 					break;
 				}
 			}
@@ -58,7 +64,7 @@ namespace MVC.Areas.Entities.Controllers
 		[HttpPost]
 	    public IActionResult UpdateEmployee(EmployeeDTO employeeDTO)
 	    {
-		    var employee = _mapper.EmployeeMapper(employeeDTO);
+		    var employee = _mapper.ToEmployee(employeeDTO);
 		    var result = _repository.UpdateEmployee(employee);
 			TempData["Result"] = result;
 		    return RedirectToAction("Index");
