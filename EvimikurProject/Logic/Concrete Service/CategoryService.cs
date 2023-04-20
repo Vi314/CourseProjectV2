@@ -60,5 +60,19 @@ namespace Logic.Concrete_Service
         {
             return _repository.GetAll();
         }
+
+        public Category GetById(int id)
+        {
+	        try
+	        {
+		        return _repository.GetById(id);
+
+			}
+			catch (Exception e)
+	        {
+		        Console.WriteLine(e);
+		        return null;
+	        }
+        }
     }
 }

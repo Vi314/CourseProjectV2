@@ -9,5 +9,6 @@ namespace Logic.Abstract_Service
         string DeleteCity(int id);
         IEnumerable<City> GetCities();
 
+        City GetById(int id);
     }
 }

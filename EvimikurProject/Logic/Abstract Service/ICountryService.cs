@@ -8,6 +8,7 @@ namespace Logic.Abstract_Service
         string UpdateCountry(Country country);
         string DeleteCountry(int id);
         IEnumerable<Country> GetCountries();
+        Country GetById(int id);
 
-    }
+}
 }

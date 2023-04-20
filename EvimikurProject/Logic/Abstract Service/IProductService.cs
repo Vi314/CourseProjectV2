@@ -8,6 +8,7 @@ namespace Logic.Abstract_Service
         string UpdateProduct(Product product);
         string DeleteProduct(int id);
         IEnumerable<Product> GetProducts();
+        Product GetById(int id);
 
-    }
+}
 }

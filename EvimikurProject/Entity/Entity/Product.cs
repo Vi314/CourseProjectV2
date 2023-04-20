@@ -12,7 +12,13 @@ namespace Entity.Entity
         public string ProductName { get; set; }
         public string Description { get; set; }
         public string CategoryId { get; set; }
-
-        public Category Category { get; set; }
+        public byte LooksGrade { get; set; }
+        public byte UsabilityGrade { get; set; }
+        public byte FunctionalityGrade { get; set; }
+        public byte InnovativeGrade { get; set; }
+        public byte PriceAdvantageGrade { get; set; }
+        public byte PotentialSalesGrade { get; set; }
+        
+		public Category Category { get; set; }
     }
 }

@@ -5,8 +5,8 @@ namespace MVC.Models
 {
 	public interface IMapper
 	{
-		public Employee ToEmployee(EmployeeDTO dto);
-		public EmployeeDTO FromEmployee(Employee entity);
+		public Employee ToEmployee(EmployeeDTO dto, List<Dealer> dealers);
+		public EmployeeDTO FromEmployee(Employee entity, List<Dealer> dealers);
 
 	}
 }

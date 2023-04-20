@@ -8,6 +8,7 @@ namespace Logic.Abstract_Service
         string UpdateDistrict(District district);
         string DeleteDistrict(int id);
         IEnumerable<District> GetDistricts();
+        District GetById(int id);
 
-    }
+}
 }

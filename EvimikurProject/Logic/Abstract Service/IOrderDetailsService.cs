@@ -8,6 +8,7 @@ namespace Logic.Abstract_Service
         string UpdateOrderDetails(OrderDetails orderDetails);
         string DeleteOrderDetails(int id);
         IEnumerable<OrderDetails> GetOrderDetails();
+        OrderDetails GetById(int id);
 
-    }
+}
 }

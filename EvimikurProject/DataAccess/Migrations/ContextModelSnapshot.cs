@@ -111,15 +111,13 @@ namespace DataAccess.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("DistrictId")
+                    b.Property<int?>("DistrictId")
                         .HasColumnType("int");
 
                     b.Property<string>("FullAdress")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("State")
@@ -326,12 +324,30 @@ namespace DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte>("FunctionalityGrade")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("InnovativeGrade")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("LooksGrade")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("PotentialSalesGrade")
+                        .HasColumnType("tinyint");
+
+                    b.Property<byte>("PriceAdvantageGrade")
+                        .HasColumnType("tinyint");
+
                     b.Property<string>("ProductName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("State")
                         .HasColumnType("int");
+
+                    b.Property<byte>("UsabilityGrade")
+                        .HasColumnType("tinyint");
 
                     b.HasKey("Id");
 
@@ -553,9 +569,7 @@ namespace DataAccess.Migrations
                 {
                     b.HasOne("Entity.Entity.District", "District")
                         .WithMany()
-                        .HasForeignKey("DistrictId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DistrictId");
 
                     b.Navigation("District");
                 });

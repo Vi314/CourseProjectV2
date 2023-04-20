@@ -8,6 +8,7 @@ namespace Logic.Abstract_Service
         string UpdateDealerStocks(DealerStocks dealerStocks);
         string DeleteDealerStocks(int id);
         IEnumerable<DealerStocks> GetDealerStocks();
+        DealerStocks GetById(int id);
 
-    }
+}
 }

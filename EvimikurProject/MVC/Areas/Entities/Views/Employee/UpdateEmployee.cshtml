@@ -1,4 +1,5 @@
 ﻿@using Entity.Entity
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model MVC.Models.ViewModels.EmployeeDTO
 @{
 	Layout = "_Layout";
@@ -7,7 +8,7 @@
 	<form method="post">
 		<div class="input-group mb-3">
 			<span class="input-group-text">İsim</span>
-			<input type="text" class="form-control" name="FirstName" value="@Model.FirstName"/>
+			<input type="text" class="form-control" name="FirstName" value="@Model.FirstName" />
 		</div>
 		<div class="input-group mb-3">
 			<span class="input-group-text">Soyisim</span>
@@ -19,7 +20,7 @@
 		</div>
 		<div class="input-group mb-3">
 			<span class="input-group-text">Unvan</span>
-			<input type="text" class="form-control" name="Title" value="@Model.Title"/>
+			<input type="text" class="form-control" name="Title" value="@Model.Title" />
 		</div>
 		<div class="input-group mb-3">
 			<span class="input-group-text">Eğitim Seviyesi</span>
@@ -29,6 +30,13 @@
 			<span class="input-group-text">Açık Adres</span>
 			<textarea type="text" class="form-control" name="FullAddress">@Model.FullAddress</textarea>
 		</div>
+		<select class="form-select mb-3" asp-for="Dealer" class="form-control">
+			<option selected="" disable>@Model.Dealer</option>
+			@foreach (var VARIABLE in ViewBag.Dealers as List<Dealer>)
+			{
+				<option>@VARIABLE.Name</option>
+			}
+		</select>
 		<button class="btn btn-outline-success" type="submit">Kaydet</button>
 	</form>
 </div>

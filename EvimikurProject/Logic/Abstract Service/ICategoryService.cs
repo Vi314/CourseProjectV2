@@ -8,6 +8,8 @@ namespace Logic.Abstract_Service
         string UpdateCategory(Category category);
         string DeleteCategory(int id);
         IEnumerable<Category> GetCategories();
+        Category GetById(int id);
 
-    }
+
+}
 }

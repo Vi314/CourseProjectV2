@@ -70,5 +70,18 @@ namespace Logic.Concrete_Service
             }
             
         }
-    }
+        public Employee GetById(int id)
+        {
+	        try
+	        {
+		        return _repository.GetById(id);
+
+	        }
+	        catch (Exception e)
+	        {
+		        Console.WriteLine(e);
+		        return null;
+	        }
+        }
+}
 }

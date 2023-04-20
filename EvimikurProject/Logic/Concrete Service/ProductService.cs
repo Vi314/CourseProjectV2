@@ -58,7 +58,20 @@ namespace Logic.Concrete_Service
 
         public IEnumerable<Product> GetProducts()
         {
-            throw new NotImplementedException();
+            return _repository.GetAll();
         }
-    }
+        public Product GetById(int id)
+        {
+	        try
+	        {
+		        return _repository.GetById(id);
+
+	        }
+	        catch (Exception e)
+	        {
+		        Console.WriteLine(e);
+		        return null;
+	        }
+        }
+}
 }

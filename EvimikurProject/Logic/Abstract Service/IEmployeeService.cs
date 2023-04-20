@@ -8,6 +8,7 @@ namespace Logic.Abstract_Service
         string UpdateEmployee(Employee employee);
         string DeleteEmployee(int id);
         IEnumerable<Employee> GetEmployees();
+        Employee GetById(int id);
 
-    }
+}
 }
