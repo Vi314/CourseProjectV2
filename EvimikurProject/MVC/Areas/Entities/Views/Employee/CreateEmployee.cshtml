@@ -28,6 +28,12 @@
 		<span class="input-group-text">Açık Adres</span>
 			<textarea type="text" class="form-control" name="FullAddress"></textarea>
 		</div>
+		<select class="form-select mb-3" name="Dealer" class="form-control">
+			@foreach (var dealer in ViewBag.Dealers as List<Dealer>)
+			{
+				<option>@dealer.Name</option>
+			}
+		</select>
 		<button class="btn btn-outline-success" type="submit">Kaydet</button>
 	</form>
 </div>

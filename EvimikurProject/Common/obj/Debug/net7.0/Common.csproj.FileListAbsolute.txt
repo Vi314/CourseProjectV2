@@ -10,3 +10,15 @@ C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Common\obj
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Common\obj\Debug\net7.0\refint\Common.dll
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Common\obj\Debug\net7.0\Common.pdb
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Common\obj\Debug\net7.0\ref\Common.dll
+C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Common\bin\Debug\net7.0\Common.deps.json
+C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Common\bin\Debug\net7.0\Common.dll
+C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Common\bin\Debug\net7.0\Common.pdb
+C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Common\obj\Debug\net7.0\Common.csproj.AssemblyReference.cache
+C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Common\obj\Debug\net7.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Common\obj\Debug\net7.0\Common.AssemblyInfoInputs.cache
+C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Common\obj\Debug\net7.0\Common.AssemblyInfo.cs
+C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Common\obj\Debug\net7.0\Common.csproj.CoreCompileInputs.cache
+C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Common\obj\Debug\net7.0\Common.dll
+C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Common\obj\Debug\net7.0\refint\Common.dll
+C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Common\obj\Debug\net7.0\Common.pdb
+C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Common\obj\Debug\net7.0\ref\Common.dll

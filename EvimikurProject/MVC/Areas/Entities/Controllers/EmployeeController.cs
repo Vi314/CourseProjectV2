@@ -3,20 +3,20 @@ using Logic.Abstract_Service;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
-using MVC.Models;
-using MVC.Models.ViewModels;
+using MVC.Areas.Entities.Models.MapperAbstract;
+using MVC.Areas.Entities.Models.ViewModels;
 
 namespace MVC.Areas.Entities.Controllers
 {
-	[Area("Entities")]
+    [Area("Entities")]
 	public class EmployeeController : Controller
     {
 	    private readonly IEmployeeService _service;
 	    private readonly IDistrictService _districtService;
 	    private readonly IDealerService _dealerService;
-	    private readonly IMapper _mapper;
+	    private readonly IEmployeeMapper _mapper;
 
-	    public EmployeeController(IEmployeeService service,IDistrictService districtService,IDealerService dealerService,IMapper mapper)
+	    public EmployeeController(IEmployeeService service,IDistrictService districtService,IDealerService dealerService,IEmployeeMapper mapper)
 	    {
 		    _service = service;
 		    _districtService = districtService;
@@ -26,6 +26,8 @@ namespace MVC.Areas.Entities.Controllers
 
 		public IActionResult CreateEmployee()
 		{
+			var dealers = _dealerService.GetDealers().ToList();
+			ViewBag.Dealers = dealers;
 			return View();
 		}
 		[HttpPost]
@@ -34,7 +36,6 @@ namespace MVC.Areas.Entities.Controllers
 			var dealers = _dealerService.GetDealers().ToList();
 			var employee = _mapper.ToEmployee(employeeDTO, dealers);
 			var result = _service.CreateEmployee(employee);
-			ViewBag.Dealers = dealers;
 			TempData["Result"] = result;
 		    return RedirectToAction("Index");
 	    }
@@ -58,17 +59,10 @@ namespace MVC.Areas.Entities.Controllers
 		public IActionResult UpdateEmployee(int id)
 		{
 			var dealers = _dealerService.GetDealers().ToList();
-			EmployeeDTO employee = new EmployeeDTO();
-			foreach (var item in _service.GetEmployees())
-			{
-				if (item.Id == id)
-				{
-					employee = _mapper.FromEmployee(item, dealers);
-					break;
-				}
-			}
+			var employee = _service.GetById(id);
+			var employeeDTO = _mapper.FromEmployee(employee, dealers);
 			ViewBag.Dealers = dealers;
-			return View(employee);
+			return View(employeeDTO);
 		}
 		[HttpPost]
 	    public IActionResult UpdateEmployee(EmployeeDTO employeeDTO)

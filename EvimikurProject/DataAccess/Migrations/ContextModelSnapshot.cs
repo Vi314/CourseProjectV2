@@ -310,48 +310,42 @@ namespace DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("CategoryId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CategoryId1")
+                    b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte>("FunctionalityGrade")
-                        .HasColumnType("tinyint");
+                    b.Property<float?>("FunctionalityGrade")
+                        .HasColumnType("real");
 
-                    b.Property<byte>("InnovativeGrade")
-                        .HasColumnType("tinyint");
+                    b.Property<float?>("InnovativeGrade")
+                        .HasColumnType("real");
 
-                    b.Property<byte>("LooksGrade")
-                        .HasColumnType("tinyint");
+                    b.Property<float?>("LooksGrade")
+                        .HasColumnType("real");
 
-                    b.Property<byte>("PotentialSalesGrade")
-                        .HasColumnType("tinyint");
+                    b.Property<float?>("PotentialSalesGrade")
+                        .HasColumnType("real");
 
-                    b.Property<byte>("PriceAdvantageGrade")
-                        .HasColumnType("tinyint");
+                    b.Property<float?>("PriceAdvantageGrade")
+                        .HasColumnType("real");
 
                     b.Property<string>("ProductName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("State")
                         .HasColumnType("int");
 
-                    b.Property<byte>("UsabilityGrade")
-                        .HasColumnType("tinyint");
+                    b.Property<float?>("UsabilityGrade")
+                        .HasColumnType("real");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId1");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
                 });
@@ -654,9 +648,7 @@ namespace DataAccess.Migrations
                 {
                     b.HasOne("Entity.Entity.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryId");
 
                     b.Navigation("Category");
                 });
