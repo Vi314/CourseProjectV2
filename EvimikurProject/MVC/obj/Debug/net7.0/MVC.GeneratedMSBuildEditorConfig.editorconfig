@@ -28,6 +28,30 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcQ2F0ZWdvcnlcVXBkYXRlQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Viraldo/Desktop/CourseProjectV2/EvimikurProject/MVC/Areas/Entities/Views/DealerStocks/CreateStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyU3RvY2tzXENyZWF0ZVN0b2NrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Viraldo/Desktop/CourseProjectV2/EvimikurProject/MVC/Areas/Entities/Views/DealerStocks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyU3RvY2tzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Viraldo/Desktop/CourseProjectV2/EvimikurProject/MVC/Areas/Entities/Views/DealerStocks/UpdateStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyU3RvY2tzXFVwZGF0ZVN0b2NrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Viraldo/Desktop/CourseProjectV2/EvimikurProject/MVC/Areas/Entities/Views/Dealer/CreateDealer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyXENyZWF0ZURlYWxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Viraldo/Desktop/CourseProjectV2/EvimikurProject/MVC/Areas/Entities/Views/Dealer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Viraldo/Desktop/CourseProjectV2/EvimikurProject/MVC/Areas/Entities/Views/Dealer/UpdateDealer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyXFVwZGF0ZURlYWxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Viraldo/Desktop/CourseProjectV2/EvimikurProject/MVC/Areas/Entities/Views/Employee/CreateEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVcQ3JlYXRlRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

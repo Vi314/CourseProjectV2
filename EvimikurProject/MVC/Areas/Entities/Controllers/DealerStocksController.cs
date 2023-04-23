@@ -1,6 +1,8 @@
 ﻿using Entity.Entity;
 using Logic.Abstract_Service;
 using Microsoft.AspNetCore.Mvc;
+using MVC.Areas.Entities.Models.MapperAbstract;
+using MVC.Areas.Entities.Models.ViewModels;
 
 namespace MVC.Areas.Entities.Controllers
 {
@@ -8,33 +10,92 @@ namespace MVC.Areas.Entities.Controllers
 	public class DealerStocksController : Controller
 	{
 		private readonly IDealerStocksService _repository;
+		private readonly IDealerStocksMapper _mapper;
+		private readonly IProductService _productService;
+		private readonly IDealerService _dealerService;
 
-		public DealerStocksController(IDealerStocksService repository)
+		public DealerStocksController(IDealerStocksService repository,IDealerStocksMapper mapper,IProductService productService,IDealerService dealerService)
 		{
 			_repository = repository;
+			_mapper = mapper;
+			_productService = productService;
+			_dealerService = dealerService;
 		}
-		public IActionResult CreateStock(DealerStocks dealerStocks) //! THE CREATE METHOD FOR CREATING STOCKS HAS TO CHECK IF STOCK ALREADY EXISTS IN THE GIVEN DEALER AND UPDATE THE COUNT IF IT DOES INSTEAD OF CREATE A NEW STOCK
-		{
-			var result = _repository.CreateDealerStocks(dealerStocks);
-			ViewBag.CreateResult = result;
-			return View();
-		}
-		public IActionResult GetStocks()
+		public IActionResult Index()
 		{
 			var stocks = _repository.GetDealerStocks();
-			return View(stocks);
+			var DTOstocks = new List<DealerStockDTO>();
+			var dealers = _dealerService.GetDealers();
+			var products = _productService.GetProducts();
+			foreach (var item in stocks)
+			{
+				if (item.State != Microsoft.EntityFrameworkCore.EntityState.Deleted)
+				{
+					DTOstocks.Add(_mapper.FromDealerStock(item, products, dealers));
+				}
+			}
+			return View(DTOstocks);
 		}
-		public IActionResult UpdateStock(DealerStocks dealerStocks) //! THE UPDATE METHOD FOR UPDATING STOCKS HAS TO CHECK IF STOCKS EXIST AND ADD ONTO INSTEAD OF ALTER IF THEY DO
+
+		public IActionResult StockEntry()
 		{
-			var result = _repository.UpdateDealerStocks(dealerStocks);
-			ViewBag.UpdateResult = result;
 			return View();
+		}
+		public IActionResult StockEntry(int id)
+		{
+			return View();
+		}
+		public IActionResult StockExit()
+		{
+			return View();
+		}
+		public IActionResult StockExit(int id)
+		{
+			return View();
+		}
+		public IActionResult CreateStock() 
+		{
+			var dealerStockDTO = new DealerStockDTO();
+			ViewBag.Dealers = _dealerService.GetDealers();
+			ViewBag.Products = _productService.GetProducts();
+			return View(dealerStockDTO);
+		}
+		[HttpPost]
+		public IActionResult CreateStock(DealerStockDTO dealerStockDTO) 
+		{
+			var products = _productService.GetProducts();
+			var dealers = _dealerService.GetDealers();
+			var dealerStocks = _mapper.ToDealerStock(dealerStockDTO, products, dealers);
+			var result = _repository.CreateDealerStocks(dealerStocks);
+			TempData["Result"] = result;
+			return RedirectToAction("Index");
+		}
+
+		public IActionResult UpdateStock(int id) 
+		{
+			var stock = _repository.GetById(id);
+			var products = _productService.GetProducts();
+			var dealers = _dealerService.GetDealers();
+			ViewBag.Dealers = _dealerService.GetDealers();
+			ViewBag.Products = _productService.GetProducts();
+			var dealerStocksDTO = _mapper.FromDealerStock(stock, products, dealers);
+			return View(dealerStocksDTO);
+		}
+		[HttpPost]
+		public IActionResult UpdateStock(DealerStockDTO dealerStocksDTO)
+		{
+			var products = _productService.GetProducts();
+			var dealers = _dealerService.GetDealers();
+			var dealerStocks = _mapper.ToDealerStock(dealerStocksDTO, products, dealers);
+			var result = _repository.UpdateDealerStocks(dealerStocks);
+			TempData["Result"] = result;
+			return RedirectToAction("Index");
 		}
 		public IActionResult DeleteStock(int id)
 		{
 			var result = _repository.DeleteDealerStocks(id);
-			ViewBag.DeleteResult = result;
-			return View();
+			TempData["Result"] = result;
+			return RedirectToAction("Index");
 		}
 	}
 }

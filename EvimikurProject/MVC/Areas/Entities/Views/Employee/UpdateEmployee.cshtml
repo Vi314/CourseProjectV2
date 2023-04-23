@@ -29,6 +29,8 @@
 			<span class="input-group-text">Açık Adres</span>
 			<textarea type="text" class="form-control" name="FullAddress">@Model.FullAddress</textarea>
 		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Bayii</span>
 		<select class="form-select mb-3" asp-for="Dealer" class="form-control">
 			<option selected="" disable>@Model.Dealer</option>
 			@foreach (var dealer in ViewBag.Dealers as List<Dealer>)
@@ -36,6 +38,7 @@
 				<option>@dealer.Name</option>
 			}
 		</select>
+		</div>
 		<button class="btn btn-outline-success" type="submit">Kaydet</button>
 	</form>
 </div>

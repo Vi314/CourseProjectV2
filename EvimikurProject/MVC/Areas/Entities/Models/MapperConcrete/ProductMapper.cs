@@ -6,7 +6,7 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
 {
 	public class ProductMapper : IProductMapper
 	{
-		public ProductDTO FromProduct(Product product, List<Category> categories)
+		public ProductDTO FromProduct(Product product, IEnumerable<Category> categories)
 		{
 			ProductDTO productDTO = new ProductDTO
 			{
@@ -28,7 +28,7 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
 			return productDTO;
 		}
 
-		public Product ToProduct(ProductDTO productDTO, List<Category> categories)
+		public Product ToProduct(ProductDTO productDTO, IEnumerable<Category> categories)
 		{
 			Product product = new Product
 			{

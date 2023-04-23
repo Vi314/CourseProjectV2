@@ -9,13 +9,12 @@ namespace Entity.Entity
 {
     public class DealerStocks:BaseEntity
     {
-        public int DealerId { get; set; }
-        public int ProductId { get; set; }
-        public int Amount { get; set; }
-        public decimal Price { get; set; }
+        public int? DealerId { get; set; }
+        public int? ProductId { get; set; }
+        public int? Amount { get; set; }
 
-        public Dealer Dealer { get; set; }
-        public Product Product { get; set; }
+        public Dealer? Dealer { get; set; }
+        public Product? Product { get; set; }
 
     }
 }

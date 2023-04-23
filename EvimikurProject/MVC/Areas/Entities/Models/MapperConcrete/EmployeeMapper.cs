@@ -8,7 +8,7 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
 {
 	public class EmployeeMapper : IEmployeeMapper
 	{
-		public Employee ToEmployee(EmployeeDTO dto, List<Dealer> dealers)
+		public Employee ToEmployee(EmployeeDTO dto, IEnumerable<Dealer> dealers)
 		{
 			var employee = new Employee
 			{
@@ -24,7 +24,7 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
 			};
 			return employee;
 		}
-		public EmployeeDTO FromEmployee(Employee entity, List<Dealer> dealers)
+		public EmployeeDTO FromEmployee(Employee entity, IEnumerable<Dealer> dealers)
 		{
 			var employeeDTO = new EmployeeDTO
 			{

@@ -8,12 +8,25 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
 	{
 		public DealerDTO FromDealer(Dealer dealer)
 		{
-			throw new NotImplementedException();
+			DealerDTO dealerDTO = new DealerDTO
+			{
+				Id = dealer.Id,
+				Name = dealer.Name,
+				FullAddress = dealer.FullAdress
+			};
+			return dealerDTO;
 		}
 
 		public Dealer ToDealer(DealerDTO dealerDTO)
 		{
-			throw new NotImplementedException();
+			Dealer dealer = new Dealer
+			{
+				Id = dealerDTO.Id,
+				Name = dealerDTO.Name,
+				FullAdress = dealerDTO.FullAddress
+			};
+
+			return dealer;
 		}
 	}
 }

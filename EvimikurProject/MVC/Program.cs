@@ -17,6 +17,8 @@ builder.Services.AddDbContext<Context>(options => options.
 builder.Services.AddSingleton<IEmployeeMapper, EmployeeMapper>();
 builder.Services.AddSingleton<IProductMapper, ProductMapper>();
 builder.Services.AddSingleton<ICategoryMapper, CategoryMapper>();
+builder.Services.AddSingleton<IDealerMapper, DealerMapper>();
+builder.Services.AddSingleton<IDealerStocksMapper, DealerStocksMapper>();
 
 builder.Services.AddTransient(typeof(IRepository<>), typeof(BaseRepository<>));
 builder.Services.AddScoped<ICategoryService, CategoryService>();

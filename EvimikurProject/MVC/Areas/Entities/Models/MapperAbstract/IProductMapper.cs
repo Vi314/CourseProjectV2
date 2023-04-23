@@ -5,8 +5,8 @@ namespace MVC.Areas.Entities.Models.MapperAbstract
 {
 	public interface IProductMapper
 	{
-		public Product ToProduct(ProductDTO productDTO, List<Category> categories);
-		public ProductDTO FromProduct(Product product, List<Category> categories);
+		public Product ToProduct(ProductDTO productDTO, IEnumerable<Category> categories);
+		public ProductDTO FromProduct(Product product, IEnumerable<Category> categories);
 
 	}
 }
