@@ -1110,16 +1110,6 @@
           }
         }
       },
-      "Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Common.dll": {}
-        }
-      },
       "DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -1140,7 +1130,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Common": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.0"
         },
         "compile": {
@@ -3384,11 +3373,6 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "Common/1.0.0": {
-      "type": "project",
-      "path": "../Common/Common.csproj",
-      "msbuildProject": "../Common/Common.csproj"
     },
     "DataAccess/1.0.0": {
       "type": "project",

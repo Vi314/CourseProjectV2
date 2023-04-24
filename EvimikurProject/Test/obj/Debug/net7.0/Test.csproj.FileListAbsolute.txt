@@ -146,8 +146,6 @@ C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Test\obj\D
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Test\obj\Debug\net7.0\Test.pdb
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Test\obj\Debug\net7.0\Test.genruntimeconfig.cache
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Test\obj\Debug\net7.0\ref\Test.dll
-C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Test\bin\Debug\net7.0\Common.dll
-C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Test\bin\Debug\net7.0\Common.pdb
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Test\bin\Debug\net7.0\Test.exe
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Test\bin\Debug\net7.0\Test.deps.json
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Test\bin\Debug\net7.0\Test.runtimeconfig.json

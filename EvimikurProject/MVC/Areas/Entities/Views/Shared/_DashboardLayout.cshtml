@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "_DashboardLayout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container d-flex flex-column flex-shrink-0 p-3" style="position: fixed; width: 280px; height: 100%">
+    
+    <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+            <i class="fa-solid fa-house fa-lg"></i>
+            <a asp-area="Entities" asp-controller="Home" asp-action="Index" class="btn btn-outline-dark d-inline-flex rounded border-0 collapsed">
+                Home
+            </a>
+        </li>
+        <hr>
+        <li class="mb-1">
+            <i class="fa-solid fa-user fa-lg"></i>
+            <a asp-area="Entities" asp-controller="Employee" asp-action="Index" class="btn btn-outline-dark d-inline-flex align-items-center rounded border-0">
+                Çalışanlar
+            </a>
+        </li>
+        <li class="mb-1">
+            <i class="fa-solid fa-shop fa-lg"></i>
+            <a asp-area="Entities" asp-controller="Dealer" asp-action="Index" class="btn btn-outline-dark d-inline-flex align-items-center rounded border-0 " >
+                Bayiiler
+            </a>
+        </li>
+        <li class="mb-1">
+            <i class="fa-solid fa-boxes-stacked fa-lg"></i>
+            <a asp-area="Entities" asp-controller="DealerStocks" asp-action="Index" class="btn btn-outline-dark d-inline-flex align-items-center rounded border-0 " >
+                Stoklar
+            </a>
+        </li>
+        <li class="mb-1">
+            <i class="fa-solid fa-tag fa-lg"></i>
+            <a asp-area="Entities" asp-controller="Product" asp-action="Index" class="btn btn-outline-dark d-inline-flex align-items-center rounded border-0" >
+                Ürünler
+            </a>
+        </li>
+        <li class="mb-1">
+            <i class="fa-solid fa-truck fa-lg"></i>
+            <a asp-area="Entities" asp-controller="Supplier" asp-action="Index" class="btn btn-outline-dark d-inline-flex align-items-center rounded border-0" >
+                Tedarikçiler
+            </a>
+        </li>
+        <li class="mb-1">
+            <i class="fa-solid fa-file-lines fa-lg"></i>
+            <a asp-area="Entities" asp-controller="SupplierContracts" asp-action="Index" class="btn btn-outline-dark d-inline-flex align-items-center rounded border-0 " >
+                Tedarikçi Sözleşmeleri
+            </a>
+        </li>
+    </ul>
+    <div class="dropdown">
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    @RenderBody()
+</div>

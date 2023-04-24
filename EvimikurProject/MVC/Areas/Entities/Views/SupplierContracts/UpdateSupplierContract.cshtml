@@ -1,0 +1,35 @@
+﻿@model SupplierContractDTO
+@{
+    ViewData["Title"] = "UpdateSupplierContract";
+    Layout = "~/Areas/Entities/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
+<span class="mt-2" style="font-family: sans-serif; font-size: 24px">Sözleşme Güncelle</span>
+<div>
+    <form method="post">
+
+        <div class="input-group mb-3">
+            <span class="input-group-text">Tedarikçi</span>
+            <select class="form-select" asp-for="SupplierName" class="form-control">
+                @foreach (var item in ViewBag.Suppliers as List<Supplier>)
+                {
+                    <option>@item.CompanyName</option>
+                }
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Kontrat Başlangıç Tarihi</span>
+            <input type="date" class="form-control" asp-for="ContractSignDate" />
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Kontrat Bitiş Tarihi</span>
+            <input type="date" class="form-control" asp-for="ContractEndDate" />
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Son Ödeme Tarihi</span>
+            <input type="date" class="form-control" asp-for="PaymentDate" />
+        </div>
+        <button class="btn btn-outline-success" type="submit">Kaydet</button>
+    </form>
+</div>

@@ -32,8 +32,6 @@ C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Logic\obj\
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Logic\obj\Debug\net7.0\refint\Logic.dll
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Logic\obj\Debug\net7.0\Logic.pdb
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Logic\obj\Debug\net7.0\ref\Logic.dll
-C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Logic\bin\Debug\net7.0\Common.dll
-C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Logic\bin\Debug\net7.0\Common.pdb
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\bin\Debug\net7.0\Logic.deps.json
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\bin\Debug\net7.0\Logic.dll
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\bin\Debug\net7.0\Logic.pdb

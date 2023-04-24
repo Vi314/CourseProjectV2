@@ -22,9 +22,6 @@ C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\refint\Entity.dll
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\Entity.pdb
 C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\ref\Entity.dll
-C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\bin\Debug\net7.0\Common.dll
-C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\bin\Debug\net7.0\Common.pdb
-C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj\Debug\net7.0\Entity.csproj.CopyComplete
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\bin\Debug\net7.0\Entity.deps.json
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\bin\Debug\net7.0\Entity.dll
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\bin\Debug\net7.0\Entity.pdb

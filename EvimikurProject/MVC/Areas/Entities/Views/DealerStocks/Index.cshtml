@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<DealerStockDTO>
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	Layout = "_DashboardLayout";
 }
 
 @if (TempData["Result"] != null)
@@ -25,7 +25,7 @@
 				<th>Ürün Adı</th>
 				<th>Miktarı</th>
 				<th>Giriş/Çıkış</th>
-				<th></th>
+				<th>Seçenekler</th>
 			</tr>
 		</thead>
 		<tbody>

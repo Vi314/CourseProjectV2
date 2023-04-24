@@ -9,8 +9,8 @@ namespace Entity.Entity
 {
 	public class Supplier:BaseEntity
 	{
-		public string CompanyName { get; set; }
-		public int SupplierGrade { get; set; }
-		public bool IsEligible { get; set; }
+		public string? CompanyName { get; set; }
+		public int? SupplierGrade { get; set; }
+		public bool? IsEligible { get; set; }
 	}
 }
