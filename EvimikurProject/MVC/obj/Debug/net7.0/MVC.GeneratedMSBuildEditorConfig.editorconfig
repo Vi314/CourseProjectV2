@@ -16,6 +16,42 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\MVC
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/Category/CreateCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcQ2F0ZWdvcnlcQ3JlYXRlQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/Category/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/Category/UpdateCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcQ2F0ZWdvcnlcVXBkYXRlQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/DealerStocks/CreateStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyU3RvY2tzXENyZWF0ZVN0b2NrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/DealerStocks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyU3RvY2tzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/DealerStocks/UpdateStock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyU3RvY2tzXFVwZGF0ZVN0b2NrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/Dealer/CreateDealer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyXENyZWF0ZURlYWxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/Dealer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/Dealer/UpdateDealer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyXFVwZGF0ZURlYWxlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/Employee/CreateEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVcQ3JlYXRlRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,6 +62,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/Employee/UpdateEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVcVXBkYXRlRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/Product/CreateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcUHJvZHVjdFxDcmVhdGVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/Product/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/Product/UpdateProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcUHJvZHVjdFxVcGRhdGVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Views/Home/Index.cshtml]

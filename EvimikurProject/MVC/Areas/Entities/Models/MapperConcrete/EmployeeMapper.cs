@@ -1,13 +1,14 @@
 ﻿using Entity.Entity;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
-using MVC.Models.ViewModels;
+using MVC.Areas.Entities.Models.MapperAbstract;
+using MVC.Areas.Entities.Models.ViewModels;
 
-namespace MVC.Models
+namespace MVC.Areas.Entities.Models.MapperConcrete
 {
-	public class Mapper : IMapper
+	public class EmployeeMapper : IEmployeeMapper
 	{
-		public Employee ToEmployee(EmployeeDTO dto, List<Dealer> dealers)
+		public Employee ToEmployee(EmployeeDTO dto, IEnumerable<Dealer> dealers)
 		{
 			var employee = new Employee
 			{
@@ -19,10 +20,11 @@ namespace MVC.Models
 				Title = dto.Title,
 				FullAddress = dto.FullAddress,
 				DealerId = dealers.Where(x => x.Name == dto.Dealer).Select(x => x.Id).FirstOrDefault()
+
 			};
 			return employee;
 		}
-		public EmployeeDTO FromEmployee(Employee entity, List<Dealer> dealers)
+		public EmployeeDTO FromEmployee(Employee entity, IEnumerable<Dealer> dealers)
 		{
 			var employeeDTO = new EmployeeDTO
 			{
@@ -37,8 +39,7 @@ namespace MVC.Models
 
 			if (entity.DealerId != null)
 			{
-				employeeDTO.Dealer = dealers.Where(x => x.Id == entity.DealerId).Select(x => x.Name).FirstOrDefault()
-					.ToString();
+				employeeDTO.Dealer = dealers.Where(x => x.Id == entity.DealerId).Select(x => x.Name).FirstOrDefault().ToString();
 			}
 
 			return employeeDTO;

@@ -15,7 +15,7 @@ namespace Entity.Entity
         public string? Title { get; set; }
         public string? EducationLevel { get; set; }
         public string? FullAddress { get; set; }
-        public int? DealerId { get; set; }
+        public int? DealerId { get; set; } = 0;
         public int? DistrictId { get; set; } 
 
 
