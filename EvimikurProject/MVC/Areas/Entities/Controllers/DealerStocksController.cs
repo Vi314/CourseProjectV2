@@ -13,13 +13,20 @@ namespace MVC.Areas.Entities.Controllers
 		private readonly IDealerStocksMapper _mapper;
 		private readonly IProductService _productService;
 		private readonly IDealerService _dealerService;
+		private readonly IStockTransferMapper _transferMapper;
 
-		public DealerStocksController(IDealerStocksService repository,IDealerStocksMapper mapper,IProductService productService,IDealerService dealerService)
+		public DealerStocksController(
+			IDealerStocksService repository,
+			IDealerStocksMapper mapper,
+			IProductService productService,
+			IDealerService dealerService,
+			IStockTransferMapper transferMapper)
 		{
 			_repository = repository;
 			_mapper = mapper;
 			_productService = productService;
 			_dealerService = dealerService;
+			_transferMapper = transferMapper;
 		}
 		public IActionResult Index()
 		{
@@ -37,23 +44,25 @@ namespace MVC.Areas.Entities.Controllers
 			return View(DTOstocks);
 		}
 
-		public IActionResult StockEntry()
+		public IActionResult TransferStock()
 		{
-			return View();
+			ViewBag.Dealers = _dealerService.GetDealers();
+			ViewBag.Products = _productService.GetProducts();
+			StockTransferDTO stockTransferDTO = new();
+			return View(stockTransferDTO);
 		}
-		public IActionResult StockEntry(int id)
-		{
-			return View();
-		}
-		public IActionResult StockExit()
-		{
-			return View();
-		}
-		public IActionResult StockExit(int id)
-		{
-			return View();
-		}
-		public IActionResult CreateStock() 
+		[HttpPost]
+        public IActionResult TransferStock(StockTransferDTO stockTransferDTO)
+        {
+			var products = _productService.GetProducts();
+			var dealers = _dealerService.GetDealers();
+			var stockTransferObject = _transferMapper.ToStockTransferObject(stockTransferDTO, products, dealers);
+			var result = _repository.TransferStock(stockTransferObject);
+			TempData["Result"] = result;
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult CreateStock() 
 		{
 			var dealerStockDTO = new DealerStockDTO();
 			ViewBag.Dealers = _dealerService.GetDealers();

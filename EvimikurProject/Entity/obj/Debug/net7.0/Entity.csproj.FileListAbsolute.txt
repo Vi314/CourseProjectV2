@@ -25,14 +25,11 @@ C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Entity\obj
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\bin\Debug\net7.0\Entity.deps.json
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\bin\Debug\net7.0\Entity.dll
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\bin\Debug\net7.0\Entity.pdb
-C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\bin\Debug\net7.0\Common.dll
-C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\bin\Debug\net7.0\Common.pdb
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\obj\Debug\net7.0\Entity.csproj.AssemblyReference.cache
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\obj\Debug\net7.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\obj\Debug\net7.0\Entity.AssemblyInfoInputs.cache
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\obj\Debug\net7.0\Entity.AssemblyInfo.cs
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\obj\Debug\net7.0\Entity.csproj.CoreCompileInputs.cache
-C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\obj\Debug\net7.0\Entity.csproj.CopyComplete
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\obj\Debug\net7.0\Entity.dll
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\obj\Debug\net7.0\refint\Entity.dll
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Entity\obj\Debug\net7.0\Entity.pdb

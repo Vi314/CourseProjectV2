@@ -24,7 +24,7 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
             SupplierDTO supplierDTO = new SupplierDTO
             {
                 Id = supplier.Id,
-                CompanyName = supplier.CompanyName,
+                CompanyName = supplier.CompanyName.Trim(),
                 SupplierGrade = supplier.SupplierGrade,
                 IsEligible = supplier.IsEligible
             };
