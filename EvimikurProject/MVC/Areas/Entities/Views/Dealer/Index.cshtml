@@ -1,7 +1,7 @@
 ﻿@model List<DealerDTO>
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+	Layout = "_DashboardLayout";
 }
 
 @if (TempData["Result"] != null)
@@ -22,7 +22,7 @@
 				<th>#</th>
 				<th>Bayii Adı</th>
 				<th>Adresi</th>
-				<th></th>
+				<th>Seçenekler</th>
 			</tr>
 		</thead>
 		<tbody>

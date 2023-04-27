@@ -12,13 +12,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>(options => options.
-    UseSqlServer(builder.Configuration.GetConnectionString("HomeConnection")));
+    UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 builder.Services.AddSingleton<IEmployeeMapper, EmployeeMapper>();
 builder.Services.AddSingleton<IProductMapper, ProductMapper>();
 builder.Services.AddSingleton<ICategoryMapper, CategoryMapper>();
 builder.Services.AddSingleton<IDealerMapper, DealerMapper>();
 builder.Services.AddSingleton<IDealerStocksMapper, DealerStocksMapper>();
+builder.Services.AddSingleton<ISupplierMapper, SupplierMapper>();
+builder.Services.AddSingleton<ISupplierContractMapper, SupplierContractMapper>();
 
 builder.Services.AddTransient(typeof(IRepository<>), typeof(BaseRepository<>));
 builder.Services.AddScoped<ICategoryService, CategoryService>();
@@ -31,6 +33,9 @@ builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 builder.Services.AddScoped<IOrderDetailsService, OrderDetailsService>();
 builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<ISupplierService, SupplierService>();
+builder.Services.AddScoped<ISupplierContractService, SupplierContractService>();
+builder.Services.AddScoped<ISupplierContractDetailsService, SupplierContractDetailsService>();
 
 
 

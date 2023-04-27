@@ -356,19 +356,18 @@ namespace DataAccess.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CompanyName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<bool>("IsEligible")
+                    b.Property<bool?>("IsEligible")
                         .HasColumnType("bit");
 
                     b.Property<int>("State")
                         .HasColumnType("int");
 
-                    b.Property<int>("SupplierGrade")
+                    b.Property<int?>("SupplierGrade")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -384,22 +383,22 @@ namespace DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("ContractEndDate")
+                    b.Property<DateTime?>("ContractEndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ContractSignDate")
+                    b.Property<DateTime?>("ContractSignDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("PaymentDate")
+                    b.Property<DateTime?>("PaymentDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("State")
                         .HasColumnType("int");
 
-                    b.Property<int>("SupplierId")
+                    b.Property<int?>("SupplierId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -746,9 +745,7 @@ namespace DataAccess.Migrations
                 {
                     b.HasOne("Entity.Entity.Supplier", "Supplier")
                         .WithMany()
-                        .HasForeignKey("SupplierId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SupplierId");
 
                     b.Navigation("Supplier");
                 });

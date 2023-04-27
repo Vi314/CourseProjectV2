@@ -1110,16 +1110,6 @@
           }
         }
       },
-      "Common/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
-        "compile": {
-          "bin/placeholder/Common.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Common.dll": {}
-        }
-      },
       "DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -1140,7 +1130,6 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Common": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.0"
         },
         "compile": {
@@ -3399,11 +3388,6 @@
         "version.txt"
       ]
     },
-    "Common/1.0.0": {
-      "type": "project",
-      "path": "../Common/Common.csproj",
-      "msbuildProject": "../Common/Common.csproj"
-    },
     "DataAccess/1.0.0": {
       "type": "project",
       "path": "../DataAccess/DataAccess.csproj",
@@ -3428,23 +3412,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Viraldo\\.nuget\\packages\\": {},
+    "C:\\Users\\Abdullah\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\Test\\Test.csproj",
+      "projectUniqueName": "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Test\\Test.csproj",
       "projectName": "Test",
-      "projectPath": "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\Test\\Test.csproj",
-      "packagesPath": "C:\\Users\\Viraldo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\Test\\obj\\",
+      "projectPath": "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Test\\Test.csproj",
+      "packagesPath": "C:\\Users\\Abdullah\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Viraldo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Abdullah\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3459,14 +3443,14 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\DataAccess\\DataAccess.csproj"
+            "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\DataAccess\\DataAccess.csproj"
             },
-            "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\Entity\\Entity.csproj": {
-              "projectPath": "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\Entity\\Entity.csproj"
+            "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Entity\\Entity.csproj": {
+              "projectPath": "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Entity\\Entity.csproj"
             },
-            "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\Logic\\Logic.csproj": {
-              "projectPath": "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\Logic\\Logic.csproj"
+            "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Logic\\Logic.csproj": {
+              "projectPath": "C:\\Users\\Abdullah\\Desktop\\CourseProject-Trying-to-fix\\EvimikurProject\\Logic\\Logic.csproj"
             }
           }
         }
@@ -3496,7 +3480,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
