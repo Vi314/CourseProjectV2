@@ -22,6 +22,8 @@ builder.Services.AddSingleton<IDealerStocksMapper, DealerStocksMapper>();
 builder.Services.AddSingleton<ISupplierMapper, SupplierMapper>();
 builder.Services.AddSingleton<ISupplierContractMapper, SupplierContractMapper>();
 builder.Services.AddSingleton<IStockTransferMapper, StockTransferMapper>();
+builder.Services.AddSingleton<IOrderMapper, OrderMapper>();
+builder.Services.AddSingleton<IOrderDetailsMapper, OrderDetailsMapper>();
 
 builder.Services.AddTransient(typeof(IRepository<>), typeof(BaseRepository<>));
 builder.Services.AddScoped<ICategoryService, CategoryService>();
@@ -36,7 +38,6 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<ISupplierService, SupplierService>();
 builder.Services.AddScoped<ISupplierContractService, SupplierContractService>();
-builder.Services.AddScoped<ISupplierContractDetailsService, SupplierContractDetailsService>();
 
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<Context>();

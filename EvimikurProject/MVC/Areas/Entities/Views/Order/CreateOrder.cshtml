@@ -1,0 +1,37 @@
+﻿@model OrderDTO
+@{
+    ViewData["Title"] = "CreateOrder";
+    Layout = "~/Areas/Entities/Views/Shared/_DashboardLayout.cshtml";
+}
+<div>
+    <form method="post">
+        <div class="input-group mb-3">
+            <span class="input-group-text">Bayii</span>
+            <select class="form-select" asp-for="DealerName" class="form-control">
+                @foreach (var dealer in ViewBag.Dealers as IEnumerable<Dealer>)
+                {
+                    <option>@dealer.Name</option>
+                }
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Çalışan</span>
+            <select class="form-select " asp-for="EmployeeName" class="form-control">
+                @foreach (var employee in ViewBag.Employees as IEnumerable<Employee>)
+                {
+                    <option>@employee.FirstName @employee.LastName</option>
+                }
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Toplam Fiyat</span>
+            <input type="number" class="form-control" asp-for="Price" />
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Sipariş Tarihi</span>
+            <input type="date" class="form-control" asp-for="OrderDate" />
+        </div>
+        <button class="btn btn-outline-success" type="submit">Kaydet</button>
+    </form>
+</div>
+

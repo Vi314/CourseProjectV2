@@ -1,4 +1,5 @@
 ﻿using Entity.Base;
+using Entity.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,6 @@ namespace Entity.Entity
 	{
 		public string? CompanyName { get; set; }
 		public int? SupplierGrade { get; set; }
-		public bool? IsEligible { get; set; }
+		public ApprovalState? ApprovalState { get; set; } = Enum.ApprovalState.NotApproved;
 	}
 }

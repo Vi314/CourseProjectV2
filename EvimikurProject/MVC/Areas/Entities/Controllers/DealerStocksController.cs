@@ -14,31 +14,35 @@ namespace MVC.Areas.Entities.Controllers
 		private readonly IProductService _productService;
 		private readonly IDealerService _dealerService;
 		private readonly IStockTransferMapper _transferMapper;
+        private readonly ISupplierService _supplierService;
 
-		public DealerStocksController(
+        public DealerStocksController(
 			IDealerStocksService repository,
 			IDealerStocksMapper mapper,
 			IProductService productService,
-			IDealerService dealerService,
-			IStockTransferMapper transferMapper)
+			IDealerService dealerService, 
+			IStockTransferMapper transferMapper,
+			ISupplierService supplierService)
 		{
 			_repository = repository;
 			_mapper = mapper;
 			_productService = productService;
 			_dealerService = dealerService;
 			_transferMapper = transferMapper;
-		}
+            _supplierService = supplierService;
+        }
 		public IActionResult Index()
 		{
 			var stocks = _repository.GetDealerStocks();
 			var DTOstocks = new List<DealerStockDTO>();
 			var dealers = _dealerService.GetDealers();
 			var products = _productService.GetProducts();
+			var suppliers = _supplierService.GetSuppliers();
 			foreach (var item in stocks)
 			{
 				if (item.State != Microsoft.EntityFrameworkCore.EntityState.Deleted)
 				{
-					DTOstocks.Add(_mapper.FromDealerStock(item, products, dealers));
+					DTOstocks.Add(_mapper.FromDealerStock(item, products, dealers, suppliers));
 				}
 			}
 			return View(DTOstocks);
@@ -56,7 +60,7 @@ namespace MVC.Areas.Entities.Controllers
         {
 			var products = _productService.GetProducts();
 			var dealers = _dealerService.GetDealers();
-			var stockTransferObject = _transferMapper.ToStockTransferObject(stockTransferDTO, products, dealers);
+            var stockTransferObject = _transferMapper.ToStockTransferObject(stockTransferDTO, products, dealers);
 			var result = _repository.TransferStock(stockTransferObject);
 			TempData["Result"] = result;
             return RedirectToAction("Index");
@@ -67,6 +71,7 @@ namespace MVC.Areas.Entities.Controllers
 			var dealerStockDTO = new DealerStockDTO();
 			ViewBag.Dealers = _dealerService.GetDealers();
 			ViewBag.Products = _productService.GetProducts();
+			ViewBag.Suppliers = _supplierService.GetSuppliers();
 			return View(dealerStockDTO);
 		}
 		[HttpPost]
@@ -74,7 +79,8 @@ namespace MVC.Areas.Entities.Controllers
 		{
 			var products = _productService.GetProducts();
 			var dealers = _dealerService.GetDealers();
-			var dealerStocks = _mapper.ToDealerStock(dealerStockDTO, products, dealers);
+            var suppliers = _supplierService.GetSuppliers();
+            var dealerStocks = _mapper.ToDealerStock(dealerStockDTO, products, dealers, suppliers);
 			var result = _repository.CreateDealerStocks(dealerStocks);
 			TempData["Result"] = result;
 			return RedirectToAction("Index");
@@ -85,9 +91,11 @@ namespace MVC.Areas.Entities.Controllers
 			var stock = _repository.GetById(id);
 			var products = _productService.GetProducts();
 			var dealers = _dealerService.GetDealers();
-			ViewBag.Dealers = _dealerService.GetDealers();
+            var suppliers = _supplierService.GetSuppliers();
+            ViewBag.Dealers = _dealerService.GetDealers();
 			ViewBag.Products = _productService.GetProducts();
-			var dealerStocksDTO = _mapper.FromDealerStock(stock, products, dealers);
+            ViewBag.Suppliers = _supplierService.GetSuppliers();
+            var dealerStocksDTO = _mapper.FromDealerStock(stock, products, dealers, suppliers);
 			return View(dealerStocksDTO);
 		}
 		[HttpPost]
@@ -95,7 +103,8 @@ namespace MVC.Areas.Entities.Controllers
 		{
 			var products = _productService.GetProducts();
 			var dealers = _dealerService.GetDealers();
-			var dealerStocks = _mapper.ToDealerStock(dealerStocksDTO, products, dealers);
+            var suppliers = _supplierService.GetSuppliers();
+            var dealerStocks = _mapper.ToDealerStock(dealerStocksDTO, products, dealers, suppliers);
 			var result = _repository.UpdateDealerStocks(dealerStocks);
 			TempData["Result"] = result;
 			return RedirectToAction("Index");

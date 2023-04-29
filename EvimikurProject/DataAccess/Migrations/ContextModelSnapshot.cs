@@ -147,10 +147,16 @@ namespace DataAccess.Migrations
                     b.Property<int?>("DealerId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("MinimumAmount")
+                        .HasColumnType("int");
+
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("State")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("SupplierId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -158,6 +164,8 @@ namespace DataAccess.Migrations
                     b.HasIndex("DealerId");
 
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("SupplierId");
 
                     b.ToTable("DealerStocks");
                 });
@@ -251,6 +259,12 @@ namespace DataAccess.Migrations
                     b.Property<int>("DealerId")
                         .HasColumnType("int");
 
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
@@ -260,6 +274,8 @@ namespace DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("DealerId");
+
+                    b.HasIndex("EmployeeId");
 
                     b.ToTable("Orders");
                 });
@@ -355,14 +371,14 @@ namespace DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("ApprovalState")
+                        .HasColumnType("int");
+
                     b.Property<string>("CompanyName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<bool?>("IsEligible")
-                        .HasColumnType("bit");
 
                     b.Property<int>("State")
                         .HasColumnType("int");
@@ -383,17 +399,32 @@ namespace DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("Amount")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("ContractEndDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("ContractSignDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("ContractState")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime?>("PaymentDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal?>("ShippingCost")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("State")
                         .HasColumnType("int");
@@ -403,43 +434,11 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ProductId");
+
                     b.HasIndex("SupplierId");
 
                     b.ToTable("SupplierContracts");
-                });
-
-            modelBuilder.Entity("Entity.Entity.SupplierContractDetails", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("ShippingCost")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<int>("State")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SupplierId")
-                        .HasColumnType("int");
-
-                    b.Property<float>("Tax")
-                        .HasColumnType("real");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SupplierContractDetails");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -670,9 +669,15 @@ namespace DataAccess.Migrations
                         .WithMany()
                         .HasForeignKey("ProductId");
 
+                    b.HasOne("Entity.Entity.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId");
+
                     b.Navigation("Dealer");
 
                     b.Navigation("Product");
+
+                    b.Navigation("Supplier");
                 });
 
             modelBuilder.Entity("Entity.Entity.District", b =>
@@ -710,7 +715,15 @@ namespace DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Entity.Entity.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Dealer");
+
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("Entity.Entity.OrderDetails", b =>
@@ -743,9 +756,15 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entity.Entity.SupplierContract", b =>
                 {
+                    b.HasOne("Entity.Entity.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId");
+
                     b.HasOne("Entity.Entity.Supplier", "Supplier")
                         .WithMany()
                         .HasForeignKey("SupplierId");
+
+                    b.Navigation("Product");
 
                     b.Navigation("Supplier");
                 });

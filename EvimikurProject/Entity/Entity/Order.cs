@@ -10,8 +10,11 @@ namespace Entity.Entity
     public class Order:BaseEntity
     {
         public int DealerId { get; set; }
+        public int EmployeeId { get; set; }
         public decimal Price { get; set; }
-        
+        public DateTime OrderDate { get; set; }
+
+        public Employee Employee { get; set; }
         public Dealer Dealer { get; set; }
     }
 }

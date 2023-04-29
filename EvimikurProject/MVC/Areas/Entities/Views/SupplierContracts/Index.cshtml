@@ -19,6 +19,10 @@
         <thead>
             <tr>
                 <th>#</th>
+                <th>Ürün Adı</th>
+                <th>Fiyatı</th>
+                <th>Adet</th>
+                <th>Kargo Fiyatı</th>
                 <th>Tedarikçi Adı</th>
                 <th>Kontrat Başlangıç Tarihi</th>
                 <th>Kontrat Bitiş Tarihi</th>
@@ -31,6 +35,10 @@
             {
                 <tr>
                     <td>@item.Id</td>
+                    <td>@item.ProductName</td>
+                    <td>@item.Price</td>
+                    <td>@item.Amount</td>
+                    <td>@item.ShippingCost</td>
                     <td>@item.SupplierName</td>
                     <td>@item.ContractSignDate</td>
                     <td>@item.ContractEndDate</td>

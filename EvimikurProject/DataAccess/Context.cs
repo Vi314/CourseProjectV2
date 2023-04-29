@@ -21,7 +21,6 @@ namespace DataAccess
         public DbSet<Product> Products { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<SupplierContract> SupplierContracts { get; set; }
-        public DbSet<SupplierContractDetails> SupplierContractDetails { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             //EMPLOYEE

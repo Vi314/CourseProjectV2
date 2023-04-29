@@ -8,7 +8,7 @@
 	<form method="post">
 		<div class="input-group mb-3">
 			<span class="input-group-text">Bayii</span>
-		<select class="form-select mb-3" asp-for="DealerName" class="form-control">
+		<select class="form-select " asp-for="DealerName" class="form-control">
 			@foreach (var dealer in ViewBag.Dealers as IEnumerable<Dealer>)
 			{
 				<option>@dealer.Name</option>
@@ -17,7 +17,7 @@
 		</div>
 		<div class="input-group mb-3">
 			<span class="input-group-text">Ürün</span>
-		<select class="form-select mb-3" asp-for="ProductName" class="form-control">
+		<select class="form-select " asp-for="ProductName" class="form-control">
 			@foreach (var product in ViewBag.Products as IEnumerable<Product>)
 			{
 				<option>@product.ProductName</option>
@@ -27,6 +27,19 @@
 		<div class="input-group mb-3">
 			<span class="input-group-text">Miktar</span>
 			<input type="number" class="form-control" asp-for="Amount"/>
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Minimum Miktar</span>
+			<input type="number" class="form-control" asp-for="MinimumAmount" />
+		</div>
+		<div class="input-group mb-3">
+			<span class="input-group-text">Tedarikçi</span>
+			<select class="form-select " asp-for="SupplierName" class="form-control">
+				@foreach (var supplier in ViewBag.Suppliers as IEnumerable<Supplier>)
+				{
+					<option>@supplier.CompanyName</option>
+				}
+			</select>
 		</div>
 		<button class="btn btn-outline-success" type="submit">Kaydet</button>
 	</form>

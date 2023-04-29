@@ -8,7 +8,27 @@
 <span class="mt-2" style="font-family: sans-serif; font-size: 24px">Sözleşme Güncelle</span>
 <div>
     <form method="post">
-
+                <div class="input-group mb-3">
+            <span class="input-group-text">Ürünler</span>
+            <select class="form-select " asp-for="ProductName" class="form-control">
+                @foreach (var item in ViewBag.Products as List<Product>)
+                {
+                    <option>@item.ProductName</option>
+                }
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Fiyat</span>
+            <input type="number" class="form-control" asp-for="Price" />
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Miktar</span>
+            <input type="number" class="form-control" asp-for="Amount" />
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text">Kargo Fiyatı</span>
+            <input type="number" class="form-control" asp-for="ShippingCost" />
+        </div>
         <div class="input-group mb-3">
             <span class="input-group-text">Tedarikçi</span>
             <select class="form-select" asp-for="SupplierName" class="form-control">
