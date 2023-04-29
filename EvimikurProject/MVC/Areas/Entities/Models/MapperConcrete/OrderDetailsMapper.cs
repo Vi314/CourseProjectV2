@@ -10,6 +10,7 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
         {
             var orderDetailsDTO = new OrderDetailsDTO
             {
+                Id= orderDetails.Id,
                 Amount = orderDetails.Amount,
                 OrderId = orderDetails.OrderId,
                 Price = orderDetails.Price,
@@ -20,7 +21,15 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
 
         public OrderDetails ToOrderDetails(OrderDetailsDTO orderDetailsDTO, IEnumerable<Product> products)
         {
-            throw new NotImplementedException();
+            var orderDetails = new OrderDetails
+            {
+                   Id= orderDetailsDTO.Id,
+                Amount = orderDetailsDTO.Amount,
+                OrderId = orderDetailsDTO.OrderId,
+                Price = orderDetailsDTO.Price,
+                ProductId = products.Where(x => x.ProductName == orderDetailsDTO.ProductName).Select(x => x.Id).FirstOrDefault(),
+            };
+            return orderDetails;
         }
     }
 }

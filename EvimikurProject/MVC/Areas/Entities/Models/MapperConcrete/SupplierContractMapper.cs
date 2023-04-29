@@ -11,9 +11,9 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
             SupplierContract supplierContract = new SupplierContract
             {
                 Id = supplierContractDTO.Id,
-                ContractSignDate = supplierContractDTO.ContractSignDate,
-                ContractEndDate = supplierContractDTO.ContractEndDate,
-                PaymentDate = supplierContractDTO.PaymentDate,
+                ContractSignDate = Convert.ToDateTime(supplierContractDTO.ContractSignDate),
+                ContractEndDate = Convert.ToDateTime(supplierContractDTO.ContractEndDate),
+                PaymentDate = Convert.ToDateTime(supplierContractDTO.PaymentDate),
                 Amount = supplierContractDTO.Amount,
                 ContractState = supplierContractDTO.ContractState,
                 Price = supplierContractDTO.Price,
@@ -30,14 +30,15 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
             SupplierContractDTO supplierContractDTO = new SupplierContractDTO
             {
                 Id = supplierContract.Id,
-                ContractSignDate = supplierContract.ContractSignDate,
-                ContractEndDate = supplierContract.ContractEndDate,
-                PaymentDate = supplierContract.PaymentDate,
+                ContractSignDate = supplierContract.ContractSignDate.ToString().Replace("00:00:00", ""),
+                ContractEndDate = supplierContract.ContractEndDate.ToString().Replace("00:00:00", ""),
+                PaymentDate = supplierContract.PaymentDate.ToString().Replace("00:00:00", ""),
                 Amount = supplierContract.Amount,
                 ContractState = supplierContract.ContractState,
                 Price = supplierContract.Price,
                 ShippingCost = supplierContract.ShippingCost,
             };
+            
             if (supplierContract.ProductId != null)
             {
                 supplierContractDTO.ProductName = products.Where(x => x.Id == supplierContract.ProductId).Select(x => x.ProductName).FirstOrDefault();

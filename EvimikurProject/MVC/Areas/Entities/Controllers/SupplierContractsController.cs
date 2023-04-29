@@ -23,8 +23,6 @@ namespace MVC.Areas.Entities.Controllers
             _productService = productService;
         }
 
-        //? SUPPLIER CONTRACT WEBPAGES DO NOT WORK TEST WITH BREAKPOINT THE CREATE AND UPDATE METHODS
-
         public IActionResult Index()
         {
             var suppliers = _supplierService.GetSuppliers();
@@ -44,6 +42,8 @@ namespace MVC.Areas.Entities.Controllers
         public IActionResult CreateSupplierContract()
         {
             var suppliers = _supplierService.GetSuppliers();
+            var products = _productService.GetProducts();
+            ViewBag.Products = products;
             ViewBag.Suppliers = suppliers;
             SupplierContractDTO supplierContractDTO = new();
             return View(supplierContractDTO);

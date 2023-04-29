@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div class="col-md-12">
-    <div class="col-md-2 d-flex flex-column flex-shrink-0 p-3 " style="width: 280px; height: 100%; float:left; ">
+    <div class="col-md-2 p-3 " style="float:left; ">
         <ul class="list-unstyled ps-0">
             <li class="mb-1">
                 <i class="fa-solid fa-house fa-lg"></i>
@@ -61,29 +61,15 @@
                 </a>
             </li>
             <li class="mb-1">
-                <i class="fa-solid fa-file fa-lg"></i>
+                <i class="fa-solid fa-file-lines fa-lg"></i>
                 <a asp-area="Entities" asp-controller="SupplierContracts" asp-action="Index" class="btn btn-outline-dark d-inline-flex align-items-center rounded border-0 ">
                     Tedarikçi Sözleşmeleri
                 </a>
             </li>
-            <li class="mb-1">
-                <i class="fa-solid fa-file-lines fa-lg"></i>
-                <a asp-area="Entities" asp-controller="SupplierContractDetails" asp-action="Index" class="btn btn-outline-dark d-inline-flex align-items-center rounded border-0 ">
-                    Sözleşme Detayları
-                </a>
-            </li>
         </ul>
-        <div class="dropdown">
-            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                <li><a class="dropdown-item" href="#">New project...</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Sign out</a></li>
-            </ul>
-        </div>
+        <hr />
     </div>
-    <div class="container col-md-10">
+    <div class="col-md-10 p-3 " style="float:left; ">
         @RenderBody()
     </div>
 </div>
