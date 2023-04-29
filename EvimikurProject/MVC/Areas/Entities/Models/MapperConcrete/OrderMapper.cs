@@ -6,7 +6,7 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
 {
     public class OrderMapper : IOrderMapper
     {
-        public OrderDTO FromOrder(Order order, IEnumerable<Employee> employees, IEnumerable<Dealer> dealers)
+        public OrderDTO FromOrder(Order order, IEnumerable<Employee> employees, IEnumerable<Dealer> dealers,IEnumerable<Supplier> suppliers)
         {
             var orderDTO = new OrderDTO
             {
@@ -15,14 +15,18 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
                 OrderDate= order.OrderDate,
                 DealerName = dealers.Where(x => x.Id == order.DealerId).Select(x => x.Name).FirstOrDefault(),
                 EmployeeName = employees.Where(x => x.Id == order.EmployeeId).Select(x => $"{x.FirstName} {x.LastName}").FirstOrDefault(),
+                
             };
 
-
+            if (order.SupplierId != null)
+            {
+                orderDTO.SupplierName = suppliers.Where(x => x.Id == order.SupplierId).Select(x => x.CompanyName).FirstOrDefault();
+            }
 
             return orderDTO;
         }
 
-        public Order ToOrder(OrderDTO orderDTO, IEnumerable<Employee> employees, IEnumerable<Dealer> dealers)
+        public Order ToOrder(OrderDTO orderDTO, IEnumerable<Employee> employees, IEnumerable<Dealer> dealers, IEnumerable<Supplier> suppliers)
         {
             var order = new Order
             {
@@ -32,6 +36,10 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
                 EmployeeId = employees.Where(x=> $"{x.FirstName} {x.LastName}" == orderDTO.EmployeeName).Select(x => x.Id).FirstOrDefault(),
                 Price= orderDTO.Price,
             };
+            if (orderDTO.SupplierName != null)
+            {
+                order.SupplierId = suppliers.Where(x => x.CompanyName == orderDTO.SupplierName).Select(x => x.Id).FirstOrDefault();
+            }
             return order;
         }
     }

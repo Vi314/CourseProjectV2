@@ -25,6 +25,7 @@
                 <th>Bayii Adı</th>
                 <th>Çalışan Adı</th>
                 <th>Toplam Fiyat</th>
+                <th>Tedarikçi Adı</th>
                 <th>Seçenekler</th>
             </tr>
         </thead>
@@ -37,6 +38,7 @@
                     <td>@item.DealerName</td>
                     <td>@item.EmployeeName</td>
                     <td>@item.Price</td>
+                    <td>@item.SupplierName</td>
                     <td>
                         <a class="btn btn-outline-info" href="/Entities/Order/UpdateOrder/@item.Id" style=" margin-right: 8px"><i class="fa-solid fa-repeat fa-lg"></i> Sipariş Detayları</a>
                         <a class="btn btn-outline-warning" href="/Entities/Order/UpdateOrder/@item.Id" style=" margin-right: 8px"><i class="fa-solid fa-repeat fa-lg"></i> Güncelle</a>

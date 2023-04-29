@@ -29,11 +29,13 @@ namespace DataAccess
                 .WithMany()
                 .OnDelete(DeleteBehavior.NoAction);
 
+
             //ORDER DETAILS
             builder.Entity<OrderDetails>()
                 .HasOne(p => p.Product)
                 .WithMany()
                 .OnDelete(DeleteBehavior.NoAction);
+
 
             base.OnModelCreating(builder);
         }

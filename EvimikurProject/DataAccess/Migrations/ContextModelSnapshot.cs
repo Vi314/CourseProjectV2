@@ -271,11 +271,16 @@ namespace DataAccess.Migrations
                     b.Property<int>("State")
                         .HasColumnType("int");
 
+                    b.Property<int?>("SupplierId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("DealerId");
 
                     b.HasIndex("EmployeeId");
+
+                    b.HasIndex("SupplierId");
 
                     b.ToTable("Orders");
                 });
@@ -721,9 +726,15 @@ namespace DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Entity.Entity.Supplier", "Supplier")
+                        .WithMany()
+                        .HasForeignKey("SupplierId");
+
                     b.Navigation("Dealer");
 
                     b.Navigation("Employee");
+
+                    b.Navigation("Supplier");
                 });
 
             modelBuilder.Entity("Entity.Entity.OrderDetails", b =>

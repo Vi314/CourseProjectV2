@@ -12,7 +12,10 @@
         <select class="form-select " asp-for="ProductName" class="form-control">
                 @foreach (var product in ViewBag.Products as IEnumerable<Product>)
                 {
+                    if (product.State != EntityState.Deleted && product.PotentialSalesGrade > 5)
+                    {
                         <option>@product.ProductName</option>
+                    }
                 }
         </select>
         </div>
@@ -21,7 +24,10 @@
         <select class="form-select " asp-for="OrderId" class="form-control">
                 @foreach (var order in ViewBag.Orders as IEnumerable<Order>)
                 {
+                    if (order.State != EntityState.Deleted)
+                    {
                         <option>@order.Id</option>
+                    }
                 }
         </select>
         </div>
