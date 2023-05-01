@@ -704,8 +704,7 @@ namespace DataAccess.Migrations
 
                     b.HasOne("Entity.Entity.District", "District")
                         .WithMany()
-                        .HasForeignKey("DistrictId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .HasForeignKey("DistrictId");
 
                     b.Navigation("Dealer");
 

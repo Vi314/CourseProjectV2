@@ -24,10 +24,7 @@ namespace DataAccess
         protected override void OnModelCreating(ModelBuilder builder)
         {
             //EMPLOYEE
-            builder.Entity<Employee>()
-                .HasOne(d => d.District)
-                .WithMany()
-                .OnDelete(DeleteBehavior.NoAction);
+
 
 
             //ORDER DETAILS

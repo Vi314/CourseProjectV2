@@ -68,7 +68,12 @@ namespace Logic.Repository
         {
             try
             {
-                return _entity.Find(id);
+                var entity = _entity.Find(id);
+                if (entity.State != EntityState.Deleted)
+                {
+                    return entity; 
+                }
+                return null;
             }
             catch (Exception ex)
             {
@@ -78,7 +83,7 @@ namespace Logic.Repository
         
         public IEnumerable<T> GetAll()
         {
-            return _entity.ToList();
+            return _entity.Where(x=>x.State!= EntityState.Deleted).ToList();
         }
     }
 }
