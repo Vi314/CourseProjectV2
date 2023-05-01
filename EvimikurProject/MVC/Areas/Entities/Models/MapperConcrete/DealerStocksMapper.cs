@@ -13,6 +13,7 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
 				Id = dealerStocks.Id,
 				Amount = dealerStocks.Amount,
 				MinimumAmount= dealerStocks.MinimumAmount,
+				Cost = dealerStocks.Cost,
 			};
 			if (dealerStocks.ProductId != null)
 			{
@@ -36,6 +37,7 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
 				Id = dealerStocksDTO.Id,
 				Amount = dealerStocksDTO.Amount,
 				MinimumAmount= dealerStocksDTO.MinimumAmount,
+				Cost= dealerStocksDTO.Cost,
 				ProductId = products.Where(x => x.ProductName == dealerStocksDTO.ProductName).Select(x => x.Id).FirstOrDefault(),
 				DealerId = dealers.Where(x => x.Name == dealerStocksDTO.DealerName).Select(x => x.Id).FirstOrDefault(),
 				SupplierId = suppliers.Where(x => x.CompanyName == dealerStocksDTO.SupplierName).Select(x => x.Id).FirstOrDefault(),

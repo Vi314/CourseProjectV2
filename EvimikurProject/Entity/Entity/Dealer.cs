@@ -13,5 +13,6 @@ namespace Entity.Entity
         public string? FullAdress { get; set; }
         public int? DistrictId { get; set; }
         public District? District { get; set; }
+        public List<Sale> Sales { get; set; }
     }
 }

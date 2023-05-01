@@ -21,18 +21,17 @@ namespace DataAccess
         public DbSet<Product> Products { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<SupplierContract> SupplierContracts { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<EmployeeVacation> EmployeeVacations { get; set; }
+        public DbSet<EmployeeEntryExit> EmployeeEntryExits { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            //EMPLOYEE
-
-
-
             //ORDER DETAILS
             builder.Entity<OrderDetails>()
                 .HasOne(p => p.Product)
                 .WithMany()
                 .OnDelete(DeleteBehavior.NoAction);
-
 
             base.OnModelCreating(builder);
         }

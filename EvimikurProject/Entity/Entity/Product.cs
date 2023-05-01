@@ -20,5 +20,6 @@ namespace Entity.Entity
         public float? PotentialSalesGrade { get; set; }
         
 		public Category? Category { get; set; }
+        public List<Sale>? Sales { get; set; }
     }
 }

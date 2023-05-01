@@ -36,6 +36,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyU3RvY2tzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Viraldo/Desktop/CourseProjectV2/EvimikurProject/MVC/Areas/Entities/Views/DealerStocks/RunSale.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyU3RvY2tzXFJ1blNhbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Viraldo/Desktop/CourseProjectV2/EvimikurProject/MVC/Areas/Entities/Views/DealerStocks/TransferStock.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyU3RvY2tzXFRyYW5zZmVyU3RvY2suY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -106,6 +110,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Viraldo/Desktop/CourseProjectV2/EvimikurProject/MVC/Areas/Entities/Views/Product/UpdateProduct.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcUHJvZHVjdFxVcGRhdGVQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Viraldo/Desktop/CourseProjectV2/EvimikurProject/MVC/Areas/Entities/Views/Sales/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcU2FsZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Viraldo/Desktop/CourseProjectV2/EvimikurProject/MVC/Areas/Entities/Views/Shared/_DashboardLayout.cshtml]

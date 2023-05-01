@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\MVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\MVC\\wwwroot\\css\\chosen.css",
+      "PackagePath": "staticwebassets\\css\\chosen.css"
+    },
+    {
       "Id": "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\MVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\MVC\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\MVC\\wwwroot\\js\\chosen.jquery.js",
+      "PackagePath": "staticwebassets\\js\\chosen.jquery.js"
     },
     {
       "Id": "C:\\Users\\Viraldo\\Desktop\\CourseProjectV2\\EvimikurProject\\MVC\\wwwroot\\js\\site.js",

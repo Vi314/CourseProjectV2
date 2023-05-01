@@ -48,6 +48,10 @@ namespace MVC.Areas.Entities.Controllers
 			return View(DTOstocks);
 		}
 
+		public IActionResult RunSale()
+		{
+			return View();
+		}
 		public IActionResult TransferStock()
 		{
 			ViewBag.Dealers = _dealerService.GetDealers();

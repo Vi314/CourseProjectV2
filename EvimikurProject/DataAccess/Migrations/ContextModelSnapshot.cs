@@ -22,6 +22,21 @@ namespace DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("DealerSale", b =>
+                {
+                    b.Property<int>("DealerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SalesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("DealerId", "SalesId");
+
+                    b.HasIndex("SalesId");
+
+                    b.ToTable("DealerSale");
+                });
+
             modelBuilder.Entity("Entity.Entity.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -141,6 +156,9 @@ namespace DataAccess.Migrations
                     b.Property<int?>("Amount")
                         .HasColumnType("int");
 
+                    b.Property<decimal?>("Cost")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
@@ -152,6 +170,9 @@ namespace DataAccess.Migrations
 
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
+
+                    b.Property<decimal?>("SalesPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("State")
                         .HasColumnType("int");
@@ -243,6 +264,72 @@ namespace DataAccess.Migrations
                     b.HasIndex("DistrictId");
 
                     b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("Entity.Entity.EmployeeEntryExit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Entry")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Exit")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("State")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("EmployeeEntryExits");
+                });
+
+            modelBuilder.Entity("Entity.Entity.EmployeeVacation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("IsApproved")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("State")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("VacationDuration")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("VacationEnd")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("VacationStart")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("EmployeeVacations");
                 });
 
             modelBuilder.Entity("Entity.Entity.Order", b =>
@@ -366,6 +453,31 @@ namespace DataAccess.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Entity.Entity.Sale", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("State")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sales");
                 });
 
             modelBuilder.Entity("Entity.Entity.Supplier", b =>
@@ -644,6 +756,36 @@ namespace DataAccess.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("ProductSale", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SalesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ProductId", "SalesId");
+
+                    b.HasIndex("SalesId");
+
+                    b.ToTable("ProductSale");
+                });
+
+            modelBuilder.Entity("DealerSale", b =>
+                {
+                    b.HasOne("Entity.Entity.Dealer", null)
+                        .WithMany()
+                        .HasForeignKey("DealerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entity.Entity.Sale", null)
+                        .WithMany()
+                        .HasForeignKey("SalesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Entity.Entity.City", b =>
                 {
                     b.HasOne("Entity.Entity.Country", "Country")
@@ -709,6 +851,24 @@ namespace DataAccess.Migrations
                     b.Navigation("Dealer");
 
                     b.Navigation("District");
+                });
+
+            modelBuilder.Entity("Entity.Entity.EmployeeEntryExit", b =>
+                {
+                    b.HasOne("Entity.Entity.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId");
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("Entity.Entity.EmployeeVacation", b =>
+                {
+                    b.HasOne("Entity.Entity.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId");
+
+                    b.Navigation("Employee");
                 });
 
             modelBuilder.Entity("Entity.Entity.Order", b =>
@@ -826,6 +986,21 @@ namespace DataAccess.Migrations
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ProductSale", b =>
+                {
+                    b.HasOne("Entity.Entity.Product", null)
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entity.Entity.Sale", null)
+                        .WithMany()
+                        .HasForeignKey("SalesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
