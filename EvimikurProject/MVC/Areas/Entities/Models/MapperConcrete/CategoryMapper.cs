@@ -16,7 +16,6 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
 			};
 			return categoryDTO;
 		}
-
 		public Category ToCategory(CategoryDTO categoryDTO)
 		{
 			Category category = new Category 
@@ -27,5 +26,6 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
 			};
 			return category;
 		}
+
 	}
 }

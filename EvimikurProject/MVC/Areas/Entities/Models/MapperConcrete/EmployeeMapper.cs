@@ -39,7 +39,7 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
 
 			if (entity.DealerId != null)
 			{
-				employeeDTO.Dealer = dealers.Where(x => x.Id == entity.DealerId).Select(x => x.Name).FirstOrDefault().ToString();
+				employeeDTO.Dealer = dealers.Where(x => x.Id == entity.DealerId).Select(x => x.Name).FirstOrDefault();
 			}
 
 			return employeeDTO;

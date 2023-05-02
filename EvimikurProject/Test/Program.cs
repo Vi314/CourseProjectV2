@@ -4,30 +4,31 @@ using Entity.Entity;
 using Logic.Repository;
 using System.Linq;
 using Logic.Concrete_Service;
+using Logic.Abstract_Service;
 
 public class Program
 {
-    private static void Main(string[] args)
+    public Program(SalesService salesService)
     {
-        //var employee = new Employee {Id=7, FirstName = "mike", LastName = "tyson", Department="Sales" };
-        //BaseRepository<Employee> repo = new (context);
+		SalesService = salesService;
+	}
 
-        ////Console.WriteLine(repo.Create(employee));
+	public static ISalesService SalesService { get; set;  }
 
-        ////Console.WriteLine(repo.Delete(5));
-        ////Console.WriteLine(repo.Delete(6));
-
-        ////var employeeList = context.Employees.Select(x => new
-        ////{ x.Id, x.State, x.FirstName, x.LastName, x.Department }).ToList();
-
-        //var employeeList = repo.GetAll();
-
-        ////repo.Update(employee);
-
-        //foreach (var item in employeeList)
-        //{
-        //    Console.WriteLine($"{item.Id}, {item.FirstName}, {item.LastName}, {item.Department}");
-        //}
+	private static void Main(string[] args)
+    {
+		Sale sale = new Sale();
+		sale.StartDate = DateTime.Now;
+		sale.EndDate = DateTime.Now;
+		sale.Dealer = new List<Dealer> {
+			new Dealer{Name="Dealer1"},
+			new Dealer{Name="Dealer2"}
+		};
+		sale.Product = new List<Product> {
+			new Product { ProductName = "Dealer1" },
+			new Product { ProductName = "Dealer2" }
+		};
+		var result = SalesService.CreateSale(sale);
 
     }
 }

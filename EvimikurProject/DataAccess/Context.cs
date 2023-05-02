@@ -21,15 +21,12 @@ namespace DataAccess
         public DbSet<Product> Products { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<SupplierContract> SupplierContracts { get; set; }
-        public DbSet<SupplierContractDetails> SupplierContractDetails { get; set; }
+        public DbSet<Sale> Sales { get; set; }
+        public DbSet<EmployeeVacation> EmployeeVacations { get; set; }
+        public DbSet<EmployeeEntryExit> EmployeeEntryExits { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            //EMPLOYEE
-            builder.Entity<Employee>()
-                .HasOne(d => d.District)
-                .WithMany()
-                .OnDelete(DeleteBehavior.NoAction);
-
             //ORDER DETAILS
             builder.Entity<OrderDetails>()
                 .HasOne(p => p.Product)

@@ -13,26 +13,27 @@ namespace MVC.Areas.Entities.Controllers
         private readonly ISupplierContractService _service;
         private readonly ISupplierContractMapper _mapper;
         private readonly ISupplierService _supplierService;
+        private readonly IProductService _productService;
 
-        public SupplierContractsController(ISupplierContractService service, ISupplierContractMapper mapper, ISupplierService supplierService)
+        public SupplierContractsController(ISupplierContractService service, ISupplierContractMapper mapper, ISupplierService supplierService,IProductService productService)
         {
             _service = service;
             _mapper = mapper;
             _supplierService = supplierService;
+            _productService = productService;
         }
-
-        //? SUPPLIER CONTRACT WEBPAGES DO NOT WORK TEST WITH BREAKPOINT THE CREATE AND UPDATE METHODS
 
         public IActionResult Index()
         {
             var suppliers = _supplierService.GetSuppliers();
+            var products = _productService.GetProducts();
             var suppliersContracts = _service.GetSupplierContracts();
             var supplierContractsDTO = new List<SupplierContractDTO>();
             foreach (var item in suppliersContracts)
             {
                 if (item.State != EntityState.Deleted)
                 {
-                    supplierContractsDTO.Add(_mapper.FromSupplierContract(item, suppliers));
+                    supplierContractsDTO.Add(_mapper.FromSupplierContract(item, suppliers, products));
                 }
             }
             return View(supplierContractsDTO);
@@ -41,6 +42,8 @@ namespace MVC.Areas.Entities.Controllers
         public IActionResult CreateSupplierContract()
         {
             var suppliers = _supplierService.GetSuppliers();
+            var products = _productService.GetProducts();
+            ViewBag.Products = products;
             ViewBag.Suppliers = suppliers;
             SupplierContractDTO supplierContractDTO = new();
             return View(supplierContractDTO);
@@ -48,8 +51,9 @@ namespace MVC.Areas.Entities.Controllers
         [HttpPost]
         public IActionResult CreateSupplierContract(SupplierContractDTO supplierContractDTO)
         {
+            var products = _productService.GetProducts();
             var suppliers = _supplierService.GetSuppliers();
-            var supplierContract = _mapper.ToSupplierContract(supplierContractDTO, suppliers);
+            var supplierContract = _mapper.ToSupplierContract(supplierContractDTO, suppliers, products);
             var result = _service.CreateSupplierContract(supplierContract);
             TempData["Result"] = result;
             return RedirectToAction("Index");
@@ -57,18 +61,22 @@ namespace MVC.Areas.Entities.Controllers
         public IActionResult UpdateSupplierContract(int id)
         {
             var suppliers = _supplierService.GetSuppliers();
+            var products = _productService.GetProducts();
+            ViewBag.Products = products;
             ViewBag.Suppliers = suppliers;
             var supplierContract = _service.GetById(id);
-            var supplierContractDTO = _mapper.FromSupplierContract(supplierContract, suppliers);
+            var supplierContractDTO = _mapper.FromSupplierContract(supplierContract, suppliers, products);
             return View(supplierContractDTO);
         }
         [HttpPost]
         public IActionResult UpdateSupplierContract(SupplierContractDTO supplierContractDTO)
         {
             var suppliers = _supplierService.GetSuppliers();
-            var supplierContract = _mapper.ToSupplierContract(supplierContractDTO, suppliers);
+            var products = _productService.GetProducts();
+            var supplierContract = _mapper.ToSupplierContract(supplierContractDTO, suppliers, products);
             var result = _service.UpdateSupplierContract(supplierContract);
             ViewBag.Suppliers = suppliers;
+            ViewBag.Products = products;
             TempData["Result"] = result;
             return RedirectToAction("Index");
         }

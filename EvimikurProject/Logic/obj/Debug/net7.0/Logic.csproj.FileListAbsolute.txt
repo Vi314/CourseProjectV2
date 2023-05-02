@@ -35,12 +35,10 @@ C:\Users\Abdullah\Desktop\CourseProject-Trying-to-fix\EvimikurProject\Logic\obj\
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\bin\Debug\net7.0\Logic.deps.json
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\bin\Debug\net7.0\Logic.dll
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\bin\Debug\net7.0\Logic.pdb
-C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\bin\Debug\net7.0\Common.dll
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\bin\Debug\net7.0\DataAccess.dll
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\bin\Debug\net7.0\Entity.dll
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\bin\Debug\net7.0\DataAccess.pdb
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\bin\Debug\net7.0\Entity.pdb
-C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\bin\Debug\net7.0\Common.pdb
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\obj\Debug\net7.0\Logic.csproj.AssemblyReference.cache
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\obj\Debug\net7.0\Logic.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Viraldo\Desktop\CourseProjectV2\EvimikurProject\Logic\obj\Debug\net7.0\Logic.AssemblyInfoInputs.cache

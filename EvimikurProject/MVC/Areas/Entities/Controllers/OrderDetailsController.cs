@@ -1,6 +1,8 @@
 ﻿using Entity.Entity;
 using Logic.Abstract_Service;
 using Microsoft.AspNetCore.Mvc;
+using MVC.Areas.Entities.Models.MapperAbstract;
+using MVC.Areas.Entities.Models.ViewModels;
 
 namespace MVC.Areas.Entities.Controllers
 {
@@ -8,33 +10,74 @@ namespace MVC.Areas.Entities.Controllers
 	public class OrderDetailsController : Controller
 	{
 		private readonly IOrderDetailsService _repository;
+        private readonly IOrderDetailsMapper _orderDetailsMapper;
+        private readonly IProductService _productService;
+        private readonly IOrderService _orderService;
 
-		public OrderDetailsController(IOrderDetailsService repository)
+        public OrderDetailsController(IOrderDetailsService repository,IOrderDetailsMapper orderDetailsMapper, IProductService productService,IOrderService orderService)
 		{
 			_repository = repository;
-		}
-		public IActionResult CreateOrderDetails(OrderDetails orderDetails) //! AN ORDERDETAILS ENTITY MUST BE CONNECTED TO AN ORDER, THIS CHECK IS CURRENTLY NOT IMPLEMENTED
+            _orderDetailsMapper = orderDetailsMapper;
+            _productService = productService;
+            _orderService = orderService;
+        }
+		public IActionResult Index()
 		{
-			var result = _repository.CreateOrderDetails(orderDetails);
-			ViewBag.CreateResult = result;
-			return View();
-		}
-		public IActionResult GetOrderDetails()
-		{
+			var products = _productService.GetProducts();
 			var orderDetails = _repository.GetOrderDetails();
-			return View(orderDetails);
-		}
-		public IActionResult UpdateOrderDetails(OrderDetails orderDetails)	
+			var orderDetailsDTO = new List<OrderDetailsDTO>();
+			foreach (var item in orderDetails)
+			{
+				if (item.State != Microsoft.EntityFrameworkCore.EntityState.Deleted)
+				{
+					orderDetailsDTO.Add(_orderDetailsMapper.FromOrderDetails(item,products));
+				}
+			}
+			return View(orderDetailsDTO);
+        }
+        public IActionResult CreateOrderDetails()
+        {
+			var products = _productService.GetProducts();
+            var orders = _orderService.GetOrders();
+            ViewBag.Orders = orders;
+            ViewBag.Products = products;
+			OrderDetailsDTO orderDetailsDTO = new();
+            return View(orderDetailsDTO);
+        }
+		[HttpPost]
+        public IActionResult CreateOrderDetails(OrderDetailsDTO orderDetailsDTO)
+        {
+			var products = _productService.GetProducts();
+			var orderDetails = _orderDetailsMapper.ToOrderDetails(orderDetailsDTO,products); 
+            var result = _repository.CreateOrderDetails(orderDetails);
+			TempData["Result"] = result;
+            return RedirectToAction("Index");
+        }
+        public IActionResult UpdateOrderDetails(int id)
+        {
+            var orders = _orderService.GetOrders();
+            var products = _productService.GetProducts();
+            ViewBag.Orders = orders;
+            ViewBag.Products = products;
+            var orderDetail = _repository.GetById(id);
+			var orderDetailsDTO = _orderDetailsMapper.FromOrderDetails(orderDetail,products);
+            return View(orderDetailsDTO);
+        }
+		[HttpPost]
+        public IActionResult UpdateOrderDetails(OrderDetailsDTO orderDetailsDTO)	
 		{
-			var result = _repository.UpdateOrderDetails(orderDetails);
-			ViewBag.UpdateResult = result;
-			return View();
-		}
+
+            var products = _productService.GetProducts();
+            var orderDetails = _orderDetailsMapper.ToOrderDetails(orderDetailsDTO, products);
+            var result = _repository.UpdateOrderDetails(orderDetails);
+            TempData["Result"] = result;
+            return RedirectToAction("Index");
+        }
 		public IActionResult DeleteOrderDetails(int id)
 		{
 			var result = _repository.DeleteOrderDetails(id);
-			ViewBag.DeleteResult = result;
-			return View();
-		}
+            TempData["Result"] = result;
+            return RedirectToAction("Index");
+        }
 	}
 }

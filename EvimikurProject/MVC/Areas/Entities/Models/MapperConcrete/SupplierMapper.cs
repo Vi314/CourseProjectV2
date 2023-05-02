@@ -14,7 +14,7 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
                 Id = supplierDTO.Id,
                 CompanyName = supplierDTO.CompanyName,
                 SupplierGrade = supplierDTO.SupplierGrade,
-                IsEligible = supplierDTO.IsEligible
+                ApprovalState = supplierDTO.ApprovalState
             };
             return supplier;
         }
@@ -24,9 +24,9 @@ namespace MVC.Areas.Entities.Models.MapperConcrete
             SupplierDTO supplierDTO = new SupplierDTO
             {
                 Id = supplier.Id,
-                CompanyName = supplier.CompanyName,
+                CompanyName = supplier.CompanyName.Trim(),
                 SupplierGrade = supplier.SupplierGrade,
-                IsEligible = supplier.IsEligible
+                ApprovalState = supplier.ApprovalState
             };
             return supplierDTO;
         }
