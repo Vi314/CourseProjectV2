@@ -15,6 +15,6 @@ namespace Entity.Entity
 		public int? VacationDuration { get; set; }
 		public bool? IsApproved { get; set; }
 
-		public Employee Employee { get; set; }
+		public Employee? Employee { get; set; }
 	}
 }

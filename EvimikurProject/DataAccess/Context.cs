@@ -24,8 +24,10 @@ namespace DataAccess
         public DbSet<Sale> Sales { get; set; }
         public DbSet<EmployeeVacation> EmployeeVacations { get; set; }
         public DbSet<EmployeeEntryExit> EmployeeEntryExits { get; set; }
+        public DbSet<EmployeeInsuranceAction> EmployeeInsuranceActions { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+
+		protected override void OnModelCreating(ModelBuilder builder)
         {
             //ORDER DETAILS
             builder.Entity<OrderDetails>()

@@ -10,8 +10,8 @@ namespace Entity.Entity
 	public class EmployeeEntryExit:BaseEntity
 	{
 		public int? EmployeeId { get; set; }
-		public DateTime Entry{ get; set; }
-		public DateTime Exit { get; set; }
+		public DateTime EntryTime { get; set; }
+		public DateTime ExitTime { get; set; }
 		public Employee Employee { get; set; }
 	}
 }
