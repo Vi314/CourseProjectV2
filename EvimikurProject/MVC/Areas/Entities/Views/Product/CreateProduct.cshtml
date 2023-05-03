@@ -15,7 +15,7 @@
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text">Kategori</span>
-            <select class="form-select mb-3" asp-for="Category" class="form-control">
+            <select class="form-select" asp-for="Category" class="form-control">
                 @foreach (var category in ViewBag.Categories as List<Category>)
                 {
                     <option>@category.Name</option>

@@ -248,6 +248,9 @@ namespace DataAccess.Migrations
                     b.Property<string>("FullAddress")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool?>("HasHealthInsurance")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
@@ -280,10 +283,10 @@ namespace DataAccess.Migrations
                     b.Property<int?>("EmployeeId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Entry")
+                    b.Property<DateTime>("EntryTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Exit")
+                    b.Property<DateTime>("ExitTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("State")
@@ -294,6 +297,39 @@ namespace DataAccess.Migrations
                     b.HasIndex("EmployeeId");
 
                     b.ToTable("EmployeeEntryExits");
+                });
+
+            modelBuilder.Entity("Entity.Entity.EmployeeInsuranceAction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Hospital")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Operation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("State")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("EmployeeInsuranceActions");
                 });
 
             modelBuilder.Entity("Entity.Entity.EmployeeVacation", b =>
@@ -477,7 +513,7 @@ namespace DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sales");
+                    b.ToTable("Sale");
                 });
 
             modelBuilder.Entity("Entity.Entity.Supplier", b =>
@@ -854,6 +890,15 @@ namespace DataAccess.Migrations
                 });
 
             modelBuilder.Entity("Entity.Entity.EmployeeEntryExit", b =>
+                {
+                    b.HasOne("Entity.Entity.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId");
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("Entity.Entity.EmployeeInsuranceAction", b =>
                 {
                     b.HasOne("Entity.Entity.Employee", "Employee")
                         .WithMany()

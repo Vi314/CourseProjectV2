@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>(options => options.
-    UseSqlServer(builder.Configuration.GetConnectionString("HomeConnection")));
+    UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 builder.Services.AddSingleton<IEmployeeMapper, EmployeeMapper>();
 builder.Services.AddSingleton<IProductMapper, ProductMapper>();
@@ -25,6 +25,9 @@ builder.Services.AddSingleton<IStockTransferMapper, StockTransferMapper>();
 builder.Services.AddSingleton<IOrderMapper, OrderMapper>();
 builder.Services.AddSingleton<IOrderDetailsMapper, OrderDetailsMapper>();
 builder.Services.AddSingleton<ISalesMapper, SalesMapper>();
+builder.Services.AddSingleton<IEmployeeVacationMapper, EmployeeVacationMapper>();
+builder.Services.AddSingleton<IEmployeeEntryExitMapper, EmployeeEntryExitMapper>();
+builder.Services.AddSingleton<IEmployeeInsuranceActionMapper, EmployeeInsuranceActionMapper>();
 
 builder.Services.AddTransient(typeof(IRepository<>), typeof(BaseRepository<>));
 builder.Services.AddScoped<ICategoryService, CategoryService>();

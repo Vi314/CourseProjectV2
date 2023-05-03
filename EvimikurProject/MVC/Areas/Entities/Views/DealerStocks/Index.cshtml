@@ -78,10 +78,13 @@
         </tbody>
     </table>
 </div>
-<script>
-    window.onload = function () {
-        var msg = document.getElementById("msg").innerText;
-        alert(msg);
-        log(msg);
-    };
-</script>
+@if (minimumAlertMessage != "")
+{
+    <script>
+        window.onload = function () {
+            var msg = document.getElementById("msg").innerText;
+            alert(msg);
+            log(msg);
+        };
+    </script>
+}

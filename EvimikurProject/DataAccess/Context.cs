@@ -21,7 +21,6 @@ namespace DataAccess
         public DbSet<Product> Products { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<SupplierContract> SupplierContracts { get; set; }
-        public DbSet<Sale> Sales { get; set; }
         public DbSet<EmployeeVacation> EmployeeVacations { get; set; }
         public DbSet<EmployeeEntryExit> EmployeeEntryExits { get; set; }
         public DbSet<EmployeeInsuranceAction> EmployeeInsuranceActions { get; set; }

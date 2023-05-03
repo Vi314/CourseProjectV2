@@ -12,7 +12,7 @@ namespace Entity.Entity
 		public DateTime? Date { get; set; }
 		public int? EmployeeId { get; set; }
 		public string? Hospital { get; set; }
-		public string? Operation { get; set; }
+		public string? Description { get; set; }
 
 		public Employee? Employee { get; set; }
 	}

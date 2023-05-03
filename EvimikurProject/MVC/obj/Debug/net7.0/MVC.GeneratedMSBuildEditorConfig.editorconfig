@@ -60,6 +60,42 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRGVhbGVyXFVwZGF0ZURlYWxlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/EmployeeEntryExit/CreateEmployeeEntryExit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVFbnRyeUV4aXRcQ3JlYXRlRW1wbG95ZWVFbnRyeUV4aXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/EmployeeEntryExit/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVFbnRyeUV4aXRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/EmployeeEntryExit/UpdateEmployeeEntryExit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVFbnRyeUV4aXRcVXBkYXRlRW1wbG95ZWVFbnRyeUV4aXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/EmployeeInsuranceAction/CreateEmployeeInsurance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVJbnN1cmFuY2VBY3Rpb25cQ3JlYXRlRW1wbG95ZWVJbnN1cmFuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/EmployeeInsuranceAction/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVJbnN1cmFuY2VBY3Rpb25cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/EmployeeInsuranceAction/UpdateEmployeeInsurance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVJbnN1cmFuY2VBY3Rpb25cVXBkYXRlRW1wbG95ZWVJbnN1cmFuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/EmployeeVacation/CreateEmployeeVacation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVWYWNhdGlvblxDcmVhdGVFbXBsb3llZVZhY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/EmployeeVacation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVWYWNhdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/EmployeeVacation/UpdateEmployeeVacation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVWYWNhdGlvblxVcGRhdGVFbXBsb3llZVZhY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Abdullah/Desktop/CourseProject-Trying-to-fix/EvimikurProject/MVC/Areas/Entities/Views/Employee/CreateEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW50aXRpZXNcVmlld3NcRW1wbG95ZWVcQ3JlYXRlRW1wbG95ZWUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

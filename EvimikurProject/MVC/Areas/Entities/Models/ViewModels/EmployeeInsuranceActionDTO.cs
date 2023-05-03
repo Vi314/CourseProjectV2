@@ -1,6 +1,6 @@
 ﻿namespace MVC.Areas.Entities.Models.ViewModels
 {
-	public class EmployeeInsuranceActionDTO
+	public class EmployeeInsuranceActionDTO:BaseDTO
 	{
 		public DateTime? Date { get; set; }
 		public string? EmployeeName { get; set; }
